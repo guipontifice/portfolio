@@ -351,10 +351,10 @@ react_production_min.version = "18.2.0";
   react.exports = react_production_min;
 }
 var reactExports = react.exports;
-const React = /* @__PURE__ */ getDefaultExportFromCjs(reactExports);
+const m$2 = /* @__PURE__ */ getDefaultExportFromCjs(reactExports);
 const e$1 = /* @__PURE__ */ _mergeNamespaces({
   __proto__: null,
-  default: React
+  default: m$2
 }, [reactExports]);
 /**
  * @license React
@@ -11630,7 +11630,7 @@ function p() {
 }
 let o$3 = function(t2) {
   let e2 = s$3(t2);
-  return React.useCallback((...r2) => e2.current(...r2), [e2]);
+  return m$2.useCallback((...r2) => e2.current(...r2), [e2]);
 };
 function s$2() {
   let r2 = typeof document == "undefined";
@@ -11644,8 +11644,8 @@ function l$1() {
   }, [e2]), reactExports.useEffect(() => s$4.handoff(), []), r2 ? false : e2;
 }
 var o$2;
-let I$1 = (o$2 = React.useId) != null ? o$2 : function() {
-  let n2 = l$1(), [e2, u2] = React.useState(n2 ? () => s$4.nextId() : null);
+let I$1 = (o$2 = m$2.useId) != null ? o$2 : function() {
+  let n2 = l$1(), [e2, u2] = m$2.useState(n2 ? () => s$4.nextId() : null);
   return l$2(() => {
     e2 === null && u2(s$4.nextId());
   }, [e2]), e2 != null ? "" + e2 : void 0;
@@ -11992,7 +11992,7 @@ function C() {
   return reactExports.useContext(n$1);
 }
 function c$1({ value: o3, children: r2 }) {
-  return React.createElement(n$1.Provider, { value: o3 }, r2);
+  return m$2.createElement(n$1.Provider, { value: o3 }, r2);
 }
 var o$1 = ((r2) => (r2.Space = " ", r2.Enter = "Enter", r2.Escape = "Escape", r2.Backspace = "Backspace", r2.Delete = "Delete", r2.ArrowLeft = "ArrowLeft", r2.ArrowUp = "ArrowUp", r2.ArrowRight = "ArrowRight", r2.ArrowDown = "ArrowDown", r2.Home = "Home", r2.End = "End", r2.PageUp = "PageUp", r2.PageDown = "PageDown", r2.Tab = "Tab", r2))(o$1 || {});
 function t(e2) {
@@ -12113,7 +12113,7 @@ function Me(e2, u2) {
   let I2 = o$3(() => {
     l2({ type: 1 });
   }), A2 = reactExports.useMemo(() => ({ open: t2 === 0, close: I2 }), [t2, I2]), f2 = { ref: m2 };
-  return React.createElement(U$1.Provider, { value: s2 }, React.createElement(c$1, { value: u$2(t2, { [0]: d.Open, [1]: d.Closed }) }, X({ ourProps: f2, theirProps: i2, slot: A2, defaultTag: Ie, name: "Menu" })));
+  return m$2.createElement(U$1.Provider, { value: s2 }, m$2.createElement(c$1, { value: u$2(t2, { [0]: d.Open, [1]: d.Closed }) }, X({ ourProps: f2, theirProps: i2, slot: A2, defaultTag: Ie, name: "Menu" })));
 }
 let ge = "button";
 function Re$1(e2, u2) {
@@ -12413,7 +12413,7 @@ function De(t2, n2) {
     A2.onStop(e2, g2, fe2), g2 === "leave" && !U(A2) && (j$1("hidden"), V2(e2));
   }) });
   let R2 = i2, me2 = { ref: a2 };
-  return z2 ? R2 = { ...R2, className: t$1(i2.className, ...k2.current.enter, ...k2.current.enterFrom) } : (R2.className = t$1(i2.className, (Q2 = e2.current) == null ? void 0 : Q2.className), R2.className === "" && delete R2.className), React.createElement(M.Provider, { value: A2 }, React.createElement(c$1, { value: u$2(l2, { ["visible"]: d.Open, ["hidden"]: d.Closed }) | H2.flags }, X({ ourProps: me2, theirProps: R2, defaultTag: ye, features: ae, visible: l2 === "visible", name: "Transition.Child" })));
+  return z2 ? R2 = { ...R2, className: t$1(i2.className, ...k2.current.enter, ...k2.current.enterFrom) } : (R2.className = t$1(i2.className, (Q2 = e2.current) == null ? void 0 : Q2.className), R2.className === "" && delete R2.className), m$2.createElement(M.Provider, { value: A2 }, m$2.createElement(c$1, { value: u$2(l2, { ["visible"]: d.Open, ["hidden"]: d.Closed }) | H2.flags }, X({ ourProps: me2, theirProps: R2, defaultTag: ye, features: ae, visible: l2 === "visible", name: "Transition.Child" })));
 }
 function He(t2, n2) {
   let { show: r2, appear: s2 = false, unmount: y$12 = true, ...D2 } = t2, c2 = reactExports.useRef(null), x2 = y(c2, n2);
@@ -12448,11 +12448,11 @@ function He(t2, n2) {
     var T2;
     d$12 && i2(false), (T2 = t2.beforeLeave) == null || T2.call(t2);
   });
-  return React.createElement(M.Provider, { value: v2 }, React.createElement(_.Provider, { value: a2 }, X({ ourProps: { ...o3, as: reactExports.Fragment, children: React.createElement(le, { ref: x2, ...o3, ...D2, beforeEnter: f2, beforeLeave: P2 }) }, theirProps: {}, defaultTag: reactExports.Fragment, features: ae, visible: h2 === "visible", name: "Transition" })));
+  return m$2.createElement(M.Provider, { value: v2 }, m$2.createElement(_.Provider, { value: a2 }, X({ ourProps: { ...o3, as: reactExports.Fragment, children: m$2.createElement(le, { ref: x2, ...o3, ...D2, beforeEnter: f2, beforeLeave: P2 }) }, theirProps: {}, defaultTag: reactExports.Fragment, features: ae, visible: h2 === "visible", name: "Transition" })));
 }
 function Fe(t2, n2) {
   let r2 = reactExports.useContext(_) !== null, s2 = C() !== null;
-  return React.createElement(React.Fragment, null, !r2 && s2 ? React.createElement(W, { ref: n2, ...t2 }) : React.createElement(le, { ref: n2, ...t2 }));
+  return m$2.createElement(m$2.Fragment, null, !r2 && s2 ? m$2.createElement(W, { ref: n2, ...t2 }) : m$2.createElement(le, { ref: n2, ...t2 }));
 }
 let W = D(He), le = D(De), Le = D(Fe), tt = Object.assign(W, { Child: Le, Root: W });
 const consoleLogger = {
@@ -17019,5 +17019,5 @@ const router = createBrowserRouter([
   }
 ]);
 client.createRoot(document.getElementById("root")).render(
-  /* @__PURE__ */ jsxRuntimeExports.jsx(reactExports.Suspense, { fallback: loadingMarkup, children: /* @__PURE__ */ jsxRuntimeExports.jsx(React.StrictMode, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(RouterProvider, { router }) }) })
+  /* @__PURE__ */ jsxRuntimeExports.jsx(reactExports.Suspense, { fallback: loadingMarkup, children: /* @__PURE__ */ jsxRuntimeExports.jsx(RouterProvider, { router }) })
 );
