@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import { RouterProvider, BrowserRouter, createBrowserRouter } from 'react-router-dom'
+import { Router } from 'react-router-dom'
 import AboutMe from './Routes/AboutMe.jsx'
 import Home from './Routes/Home.jsx'
 import Contact from './Routes/Contact.jsx'
@@ -42,9 +43,7 @@ const router = createBrowserRouter([
   },
 ])
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <Suspense fallback={loadingMarkup}>
-    <React.StrictMode>
+    <Suspense fallback={loadingMarkup}>
       <RouterProvider router={router} />
-    </React.StrictMode>
-  </Suspense>
+    </Suspense>
 )
