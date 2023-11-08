@@ -1,6 +1,7 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import  profile_photo  from '../../public/assets/images/profile-photo.jpeg'
 
 
 function Home() {
@@ -10,7 +11,7 @@ function Home() {
     <>
       <div className='xxs:hidden xs:hidden sm:hidden flex flex-col justify-start mt-40 font-roboto w-8/12 text-white'>
         <div className='flex w-8/12'>
-          <img src="../src/assets/images/profile-photo.jpeg" alt="" className='w-32 rounded-full h-32 mb-10' />
+          <img src={`${profile_photo}`} alt="" className='w-32 rounded-full h-32 mb-10' />
         </div>
         <div>
           <h1 className='font-bold text-4xl mb-5'>
@@ -75,7 +76,7 @@ function Home() {
           </a>
         </div>
         <div className='mt-16 flex justify-center'>
-          <img src="../src/assets/images/profile-photo.jpeg" alt="" className='w-32 rounded-full h-32 mb-10' />
+          <img src={profile_photo} alt="" className='w-32 rounded-full h-32 mb-10' />
         </div>
       </div>
     </>

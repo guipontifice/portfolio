@@ -1,5 +1,6 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
+import profile_photo from '../../public/assets/images/profile-photo.jpeg'
 
 function AboutMe() {
   const { t } = useTranslation()
@@ -64,7 +65,7 @@ function AboutMe() {
           </div>
         </div>
         <div className='flex flex-col items-center w-6/12 ml-20 '>
-          <img src="../src/assets/images/profile-photo.jpeg" alt="" className='w-40 rounded-full h-40 mb-10' />
+          <img src={profile_photo} alt="" className='w-40 rounded-full h-40 mb-10' />
           <div className='mt-5 text-2xl flex flex-col text-white'>
             <a
               href='https://github.com/guipontifice'
@@ -103,7 +104,7 @@ function AboutMe() {
           </div>
         </div>
         <div className='flex justify-center mt-7'>
-          <img src="../src/assets/images/profile-photo.jpeg" alt="" className='w-40 rounded-full h-40 mb-10' />
+          <img src={profile_photo} alt="" className='w-40 rounded-full h-40 mb-10' />
         </div>
         <div className='flex flex-col justify-start font-roboto text-white'>
           <a

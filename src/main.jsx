@@ -9,41 +9,45 @@ import Home from './Routes/Home.jsx'
 import Contact from './Routes/Contact.jsx'
 import Projects from './Routes/Projects.jsx'
 import ErrorPage from './Routes/ErrorPage.jsx'
-
-
 const loadingMarkup = (
   <div className="py-4 text-center">
     <h1>Loading...</h1>
   </div>
 )
-const router = createBrowserRouter([
-  {
-    //Error Boundary Component
-    path: '/',
-    element: <App />,
-    errorElement: <ErrorPage />,
-    children: [
-      {
-        path: 'portfolio',
-        element: <Home />
-      },
-      {
-        path: 'AboutMe',
-        element: <AboutMe />
-      },
-      {
-        path: 'Projects',
-        element: <Projects />
-      },
-      {
-        path: 'Contact',
-        element: <Contact />
-      }
-    ]
-  },
-])
+
+// const router = createBrowserRouter([
+//   {
+//     //Error Boundary Component
+//     path: '/',
+//     element: <App />,
+//     errorElement: <ErrorPage />,
+//     children: [
+//       {
+//         path: 'portfolio',
+//         element: <Home />
+//       },
+//       {
+//         path: 'AboutMe',
+//         element: <AboutMe />
+//       },
+//       {
+//         path: 'Projects',
+//         element: <Projects />
+//       },
+//       {
+//         path: 'Contact',
+//         element: <Contact />
+//       }
+//     ]
+//   },
+// ])
 ReactDOM.createRoot(document.getElementById('root')).render(
-    <Suspense fallback={loadingMarkup}>
-      <RouterProvider router={router} />
-    </Suspense>
+  <Suspense fallback={loadingMarkup}>
+    <React.StrictMode>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </React.StrictMode>
+    {/* <RouterProvider router={router} /> */}
+  </Suspense>
 )

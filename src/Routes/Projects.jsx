@@ -2,7 +2,9 @@ import React from 'react'
 import Footer from '../Components/Footer'
 import { t } from 'i18next'
 import { useTranslation } from 'react-i18next'
-
+import timerPhoto from '../../public/assets/images/timer-photo1.jpg'
+import wordlePhoto from '../../public/assets/images/wordle-logo.png'
+import moviePhoto from '../../public/assets/images/moviedatabase-logo.png'
 
 function Projects() {
   const { t } = useTranslation()
@@ -11,19 +13,19 @@ function Projects() {
       title: 'Timer', 
       paragraph: t('timer_project'), 
       githubLink: 'https://github.com/guipontifice/cronometro-react', 
-      image: '../src/assets/images/timer-photo1.jpg' 
+      image: timerPhoto 
     },
     { 
       title: 'Movie Catalog', 
       paragraph: t('movie_project'), 
       githubLink: 'https://github.com/guipontifice/movie-catalog', 
-      image: '../src/assets/images/moviedatabase-logo.png' 
+      image: moviePhoto 
     },
     { 
       title: 'Wordle Clone', 
       paragraph: t('wordle_project'), 
       githubLink: 'https://github.com/guipontifice/WordleClone/tree/main/wordle_project', 
-      image: '../src/assets/images/wordle-logo.png' 
+      image: wordlePhoto
     },
   ]
   return (
