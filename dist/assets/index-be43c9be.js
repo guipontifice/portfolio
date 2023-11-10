@@ -9266,6 +9266,20 @@ function useTranslation(ns) {
     }
   });
 }
+function I18nextProvider(_ref) {
+  let {
+    i18n,
+    defaultNS,
+    children
+  } = _ref;
+  const value = reactExports.useMemo(() => ({
+    i18n,
+    defaultNS
+  }), [i18n, defaultNS]);
+  return reactExports.createElement(I18nContext.Provider, {
+    value
+  }, children);
+}
 var i$2 = Object.defineProperty;
 var d$2 = (t2, e2, n2) => e2 in t2 ? i$2(t2, e2, { enumerable: true, configurable: true, writable: true, value: n2 }) : t2[e2] = n2;
 var r$1 = (t2, e2, n2) => (d$2(t2, typeof e2 != "symbol" ? e2 + "" : e2, n2), n2);
@@ -12857,7 +12871,7 @@ function Footer() {
     /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-gray text-xs my-3", children: "2023 - All rights reserved ©" })
   ] });
 }
-const profile_photo$1 = "/portfolio/assets/profile-photo-1-a9fb3a2d.jpeg";
+const profile_photo = "/portfolio/assets/profile-photo-1dba834d.jpeg";
 function AboutMe() {
   const { t: t2 } = useTranslation();
   const Experiences = [
@@ -12907,7 +12921,7 @@ function AboutMe() {
         ] })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col items-center w-6/12 ml-20 ", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: profile_photo$1, alt: "", className: "w-40 rounded-full h-40 mb-10" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: profile_photo, alt: "", className: "w-40 rounded-full h-40 mb-10" }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-5 text-2xl flex flex-col text-white", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsxs(
             "a",
@@ -12947,7 +12961,7 @@ function AboutMe() {
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-lg  text-gray mt-5", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: t2("about_me_text_2") }) }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-lg text-gray mt-5", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: t2("about_me_text_3") }) })
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex justify-center mt-7", children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "../src/assets/images/profile-photo.jpeg", alt: "", className: "w-40 rounded-full h-40 mb-10" }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex justify-center mt-7", children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: profile_photo, alt: "", className: "w-40 rounded-full h-40 mb-10" }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col justify-start font-roboto text-white", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs(
           "a",
@@ -12991,7 +13005,6 @@ function AboutMe() {
     ] })
   ] });
 }
-const profile_photo = "/portfolio/assets/profile-photo-1dba834d.jpeg";
 function Home() {
   const { t: t2 } = useTranslation();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -13058,7 +13071,7 @@ function Home() {
           }
         )
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-16 flex justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "../src/assets/images/profile-photo.jpeg", alt: "", className: "w-32 rounded-full h-32 mb-10" }) })
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-16 flex justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: profile_photo, alt: "", className: "w-32 rounded-full h-32 mb-10" }) })
     ] })
   ] });
 }
@@ -13775,13 +13788,13 @@ var Browser = /* @__PURE__ */ function() {
   return Browser2;
 }();
 Browser.type = "languageDetector";
-function _typeof$2(obj) {
+function _typeof$2(o3) {
   "@babel/helpers - typeof";
-  return _typeof$2 = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(obj2) {
-    return typeof obj2;
-  } : function(obj2) {
-    return obj2 && "function" == typeof Symbol && obj2.constructor === Symbol && obj2 !== Symbol.prototype ? "symbol" : typeof obj2;
-  }, _typeof$2(obj);
+  return _typeof$2 = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o4) {
+    return typeof o4;
+  } : function(o4) {
+    return o4 && "function" == typeof Symbol && o4.constructor === Symbol && o4 !== Symbol.prototype ? "symbol" : typeof o4;
+  }, _typeof$2(o3);
 }
 var arr = [];
 var each = arr.forEach;
@@ -13820,21 +13833,22 @@ function requireBrowserPonyfill() {
     return browserPonyfill.exports;
   hasRequiredBrowserPonyfill = 1;
   (function(module, exports) {
-    var global2 = typeof self !== "undefined" ? self : commonjsGlobal;
-    var __self__ = function() {
+    var __global__ = typeof globalThis !== "undefined" && globalThis || typeof self !== "undefined" && self || typeof commonjsGlobal !== "undefined" && commonjsGlobal;
+    var __globalThis__ = function() {
       function F2() {
         this.fetch = false;
-        this.DOMException = global2.DOMException;
+        this.DOMException = __global__.DOMException;
       }
-      F2.prototype = global2;
+      F2.prototype = __global__;
       return new F2();
     }();
-    (function(self2) {
+    (function(globalThis2) {
       (function(exports2) {
+        var global2 = typeof globalThis2 !== "undefined" && globalThis2 || typeof self !== "undefined" && self || typeof global2 !== "undefined" && global2;
         var support = {
-          searchParams: "URLSearchParams" in self2,
-          iterable: "Symbol" in self2 && "iterator" in Symbol,
-          blob: "FileReader" in self2 && "Blob" in self2 && function() {
+          searchParams: "URLSearchParams" in global2,
+          iterable: "Symbol" in global2 && "iterator" in Symbol,
+          blob: "FileReader" in global2 && "Blob" in global2 && function() {
             try {
               new Blob();
               return true;
@@ -13842,8 +13856,8 @@ function requireBrowserPonyfill() {
               return false;
             }
           }(),
-          formData: "FormData" in self2,
-          arrayBuffer: "ArrayBuffer" in self2
+          formData: "FormData" in global2,
+          arrayBuffer: "ArrayBuffer" in global2
         };
         function isDataView(obj) {
           return obj && DataView.prototype.isPrototypeOf(obj);
@@ -13868,8 +13882,8 @@ function requireBrowserPonyfill() {
           if (typeof name !== "string") {
             name = String(name);
           }
-          if (/[^a-z0-9\-#$%&'*+.^_`|~]/i.test(name)) {
-            throw new TypeError("Invalid character in header field name");
+          if (/[^a-z0-9\-#$%&'*+.^_`|~!]/i.test(name) || name === "") {
+            throw new TypeError('Invalid character in header field name: "' + name + '"');
           }
           return name.toLowerCase();
         }
@@ -14007,6 +14021,7 @@ function requireBrowserPonyfill() {
         function Body() {
           this.bodyUsed = false;
           this._initBody = function(body) {
+            this.bodyUsed = this.bodyUsed;
             this._bodyInit = body;
             if (!body) {
               this._bodyText = "";
@@ -14054,7 +14069,20 @@ function requireBrowserPonyfill() {
             };
             this.arrayBuffer = function() {
               if (this._bodyArrayBuffer) {
-                return consumed(this) || Promise.resolve(this._bodyArrayBuffer);
+                var isConsumed = consumed(this);
+                if (isConsumed) {
+                  return isConsumed;
+                }
+                if (ArrayBuffer.isView(this._bodyArrayBuffer)) {
+                  return Promise.resolve(
+                    this._bodyArrayBuffer.buffer.slice(
+                      this._bodyArrayBuffer.byteOffset,
+                      this._bodyArrayBuffer.byteOffset + this._bodyArrayBuffer.byteLength
+                    )
+                  );
+                } else {
+                  return Promise.resolve(this._bodyArrayBuffer);
+                }
               } else {
                 return this.blob().then(readBlobAsArrayBuffer);
               }
@@ -14091,6 +14119,9 @@ function requireBrowserPonyfill() {
           return methods.indexOf(upcased) > -1 ? upcased : method;
         }
         function Request(input, options) {
+          if (!(this instanceof Request)) {
+            throw new TypeError('Please use the "new" operator, this DOM object constructor cannot be called as a function.');
+          }
           options = options || {};
           var body = options.body;
           if (input instanceof Request) {
@@ -14124,6 +14155,17 @@ function requireBrowserPonyfill() {
             throw new TypeError("Body not allowed for GET or HEAD requests");
           }
           this._initBody(body);
+          if (this.method === "GET" || this.method === "HEAD") {
+            if (options.cache === "no-store" || options.cache === "no-cache") {
+              var reParamSearch = /([?&])_=[^&]*/;
+              if (reParamSearch.test(this.url)) {
+                this.url = this.url.replace(reParamSearch, "$1_=" + (/* @__PURE__ */ new Date()).getTime());
+              } else {
+                var reQueryString = /\?/;
+                this.url += (reQueryString.test(this.url) ? "&" : "?") + "_=" + (/* @__PURE__ */ new Date()).getTime();
+              }
+            }
+          }
         }
         Request.prototype.clone = function() {
           return new Request(this, { body: this._bodyInit });
@@ -14143,7 +14185,9 @@ function requireBrowserPonyfill() {
         function parseHeaders(rawHeaders) {
           var headers = new Headers();
           var preProcessedHeaders = rawHeaders.replace(/\r?\n[\t ]+/g, " ");
-          preProcessedHeaders.split(/\r?\n/).forEach(function(line) {
+          preProcessedHeaders.split("\r").map(function(header) {
+            return header.indexOf("\n") === 0 ? header.substr(1, header.length) : header;
+          }).forEach(function(line) {
             var parts = line.split(":");
             var key = parts.shift().trim();
             if (key) {
@@ -14155,13 +14199,16 @@ function requireBrowserPonyfill() {
         }
         Body.call(Request.prototype);
         function Response(bodyInit, options) {
+          if (!(this instanceof Response)) {
+            throw new TypeError('Please use the "new" operator, this DOM object constructor cannot be called as a function.');
+          }
           if (!options) {
             options = {};
           }
           this.type = "default";
           this.status = options.status === void 0 ? 200 : options.status;
           this.ok = this.status >= 200 && this.status < 300;
-          this.statusText = "statusText" in options ? options.statusText : "OK";
+          this.statusText = options.statusText === void 0 ? "" : "" + options.statusText;
           this.headers = new Headers(options.headers);
           this.url = options.url || "";
           this._initBody(bodyInit);
@@ -14187,7 +14234,7 @@ function requireBrowserPonyfill() {
           }
           return new Response(null, { status, headers: { location: url } });
         };
-        exports2.DOMException = self2.DOMException;
+        exports2.DOMException = global2.DOMException;
         try {
           new exports2.DOMException();
         } catch (err) {
@@ -14218,29 +14265,54 @@ function requireBrowserPonyfill() {
               };
               options.url = "responseURL" in xhr ? xhr.responseURL : options.headers.get("X-Request-URL");
               var body = "response" in xhr ? xhr.response : xhr.responseText;
-              resolve(new Response(body, options));
+              setTimeout(function() {
+                resolve(new Response(body, options));
+              }, 0);
             };
             xhr.onerror = function() {
-              reject(new TypeError("Network request failed"));
+              setTimeout(function() {
+                reject(new TypeError("Network request failed"));
+              }, 0);
             };
             xhr.ontimeout = function() {
-              reject(new TypeError("Network request failed"));
+              setTimeout(function() {
+                reject(new TypeError("Network request failed"));
+              }, 0);
             };
             xhr.onabort = function() {
-              reject(new exports2.DOMException("Aborted", "AbortError"));
+              setTimeout(function() {
+                reject(new exports2.DOMException("Aborted", "AbortError"));
+              }, 0);
             };
-            xhr.open(request3.method, request3.url, true);
+            function fixUrl(url) {
+              try {
+                return url === "" && global2.location.href ? global2.location.href : url;
+              } catch (e2) {
+                return url;
+              }
+            }
+            xhr.open(request3.method, fixUrl(request3.url), true);
             if (request3.credentials === "include") {
               xhr.withCredentials = true;
             } else if (request3.credentials === "omit") {
               xhr.withCredentials = false;
             }
-            if ("responseType" in xhr && support.blob) {
-              xhr.responseType = "blob";
+            if ("responseType" in xhr) {
+              if (support.blob) {
+                xhr.responseType = "blob";
+              } else if (support.arrayBuffer && request3.headers.get("Content-Type") && request3.headers.get("Content-Type").indexOf("application/octet-stream") !== -1) {
+                xhr.responseType = "arraybuffer";
+              }
             }
-            request3.headers.forEach(function(value, name) {
-              xhr.setRequestHeader(name, value);
-            });
+            if (init2 && typeof init2.headers === "object" && !(init2.headers instanceof Headers)) {
+              Object.getOwnPropertyNames(init2.headers).forEach(function(name) {
+                xhr.setRequestHeader(name, normalizeValue(init2.headers[name]));
+              });
+            } else {
+              request3.headers.forEach(function(value, name) {
+                xhr.setRequestHeader(name, value);
+              });
+            }
             if (request3.signal) {
               request3.signal.addEventListener("abort", abortXhr);
               xhr.onreadystatechange = function() {
@@ -14253,23 +14325,22 @@ function requireBrowserPonyfill() {
           });
         }
         fetch2.polyfill = true;
-        if (!self2.fetch) {
-          self2.fetch = fetch2;
-          self2.Headers = Headers;
-          self2.Request = Request;
-          self2.Response = Response;
+        if (!global2.fetch) {
+          global2.fetch = fetch2;
+          global2.Headers = Headers;
+          global2.Request = Request;
+          global2.Response = Response;
         }
         exports2.Headers = Headers;
         exports2.Request = Request;
         exports2.Response = Response;
         exports2.fetch = fetch2;
-        Object.defineProperty(exports2, "__esModule", { value: true });
         return exports2;
       })({});
-    })(__self__);
-    __self__.fetch.ponyfill = true;
-    delete __self__.fetch.polyfill;
-    var ctx = __self__;
+    })(__globalThis__);
+    __globalThis__.fetch.ponyfill = true;
+    delete __globalThis__.fetch.polyfill;
+    var ctx = __global__.fetch ? __global__ : __globalThis__;
     exports = ctx.fetch;
     exports.default = ctx.fetch;
     exports.fetch = ctx.fetch;
@@ -14305,13 +14376,13 @@ const fetchNode = /* @__PURE__ */ _mergeNamespaces({
   __proto__: null,
   default: getFetch
 }, [getFetchExports]);
-function _typeof$1(obj) {
+function _typeof$1(o3) {
   "@babel/helpers - typeof";
-  return _typeof$1 = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(obj2) {
-    return typeof obj2;
-  } : function(obj2) {
-    return obj2 && "function" == typeof Symbol && obj2.constructor === Symbol && obj2 !== Symbol.prototype ? "symbol" : typeof obj2;
-  }, _typeof$1(obj);
+  return _typeof$1 = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o4) {
+    return typeof o4;
+  } : function(o4) {
+    return o4 && "function" == typeof Symbol && o4.constructor === Symbol && o4 !== Symbol.prototype ? "symbol" : typeof o4;
+  }, _typeof$1(o3);
 }
 var fetchApi;
 if (typeof fetch === "function") {
@@ -14380,6 +14451,9 @@ var requestWithFetch = function requestWithFetch2(options, url, payload, callbac
     url = addQueryString(url, options.queryStringParams);
   }
   var headers = defaults({}, typeof options.customHeaders === "function" ? options.customHeaders() : options.customHeaders);
+  if (typeof window === "undefined" && typeof global !== "undefined" && typeof global.process !== "undefined" && global.process.versions && global.process.versions.node) {
+    headers["User-Agent"] = "i18next-http-backend (node/".concat(global.process.version, "; ").concat(global.process.platform, " ").concat(global.process.arch, ")");
+  }
   if (payload)
     headers["Content-Type"] = "application/json";
   var reqOptions = typeof options.requestOptions === "function" ? options.requestOptions(payload) : options.requestOptions;
@@ -14463,13 +14537,13 @@ var request = function request2(options, url, payload, callback) {
   }
   callback(new Error("No fetch and no xhr implementation found!"));
 };
-function _typeof(obj) {
+function _typeof(o3) {
   "@babel/helpers - typeof";
-  return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(obj2) {
-    return typeof obj2;
-  } : function(obj2) {
-    return obj2 && "function" == typeof Symbol && obj2.constructor === Symbol && obj2 !== Symbol.prototype ? "symbol" : typeof obj2;
-  }, _typeof(obj);
+  return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o4) {
+    return typeof o4;
+  } : function(o4) {
+    return o4 && "function" == typeof Symbol && o4.constructor === Symbol && o4 !== Symbol.prototype ? "symbol" : typeof o4;
+  }, _typeof(o3);
 }
 function _classCallCheck(instance2, Constructor) {
   if (!(instance2 instanceof Constructor)) {
@@ -14703,6 +14777,8 @@ var Backend = function() {
 }();
 Backend.type = "backend";
 instance.use(initReactI18next).use(Browser).use(Backend).init({
+  load: "languageOnly",
+  addPath: "../public/assets/locales/add/{{lng}}/translation",
   supportedLngs: ["en", "fr", "es", "pt"],
   fallbackLgn: "en",
   detection: {
@@ -14710,11 +14786,12 @@ instance.use(initReactI18next).use(Browser).use(Backend).init({
     caches: []
   },
   backend: {
-    loadPath: "../public/assets/locales/{{lng}}/translation.json"
-  }
+    loadPath: "/portfolio/public/assets/locales/{{lng}}/translation.json"
+  },
+  allowMultiLoading: false
 });
 function App() {
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "bg-zinc900", children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "bg-zinc900", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(I18nextProvider, { i18n: instance, children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "bg-zinc900 flex justify-center w-full", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(Navbar, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsxs(Routes, { children: [
@@ -14726,7 +14803,7 @@ function App() {
       /* @__PURE__ */ jsxRuntimeExports.jsx(Outlet, {})
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(Footer, {})
-  ] });
+  ] }) });
 }
 const index = "";
 const loadingMarkup = /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "py-4 text-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { children: "Loading..." }) });

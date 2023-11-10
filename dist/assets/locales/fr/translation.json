@@ -1,9 +1,0 @@
-{
-  "welcome_message": "Welcome",
-  "introduction": "My name is Guilherme Pontifice, I'm a Front-End Software Developer",
-  "days_since_release": "It's been {{number_of_days}} days since the video has been released",
-  "about_me": "About Me",
-  "projects": "Projects",
-  "contact": "Contact",
-  "skills": "Skills"
-}

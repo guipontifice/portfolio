@@ -6,7 +6,7 @@ import i18next from 'i18next';
 import cookies from 'js-cookie'
 // import "/Users/guilh/original_portfolio/node_modules/flag-icon-css/css/flag-icons";
 // import "/node_modules/flag-icons/css/flag-icons.min.css";
-
+// import "../../node_modules/flag-icon-css/css/flag-icons.min.css"
 const languages = [
     {
         code: 'en',
