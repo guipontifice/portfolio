@@ -3,6 +3,8 @@ import { Menu, Transition } from '@headlessui/react';
 import { Fragment } from 'react';
 import i18next from 'i18next';
 import cookies from 'js-cookie';
+import '../i18n.js'
+
 
 const languages = [
     {
@@ -25,6 +27,7 @@ const languages = [
 function LanguageSelector2() {
     const [currentLanguageCode, setCurrentLanguageCode] = useState(cookies.get('i18next') || 'en');
     const currentLanguage = languages.find(lang => lang.code === currentLanguageCode);
+    const [forceUpdate, setForceUpdate] = useState(false);
 
     useEffect(() => {
         document.body.dir = currentLanguage.dir || 'ltr';
@@ -32,11 +35,17 @@ function LanguageSelector2() {
 
     const changeLanguage = (code) => {
         setCurrentLanguageCode(code);
+        cookies.set('i18next', code); // Update the language in cookies
         i18next.changeLanguage(code, (err, t) => {
             if (err) {
                 console.log('something went wrong loading', err);
             }
             console.log('Language is:', i18next.language);
+            i18next.reloadResources().then(() => {
+                // Trigger a re-render by updating a state variable
+                // For instance, let's add a state to force a re-render
+                setForceUpdate(prev => !prev); // Assuming you have a state variable to trigger re-renders
+            });
         });
     };
 

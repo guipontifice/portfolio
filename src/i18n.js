@@ -16,25 +16,16 @@ i18next
     .use(HttpApi)
     .init({
         supportedLngs: ['en', 'fr', 'es', 'pt'],
-        fallbackLng: "en", // fixed a typo in fallbackLng
+        fallbackLng: false, // fixed a typo in fallbackLng
         detection: {
             order: ['path', 'cookie', 'htmlTag', 'localStorage', 'subdomain'],
             caches: ['cookie']
         },
         backend: {
-            loadPath: getLoadPath()
+            loadPath: getLoadPath
         },
     });
 
-// Use a callback or setTimeout to check language after a delay
-setTimeout(() => {
-
-    i18next.changeLanguage('en', (err, t) => {
-        if (err) return console.log('something went wrong loading', err);
-        console.log('Language is:', i18next.language);
-    });
-}, 500); // Adjust the delay time as needed
-// Introduce a console log to trace the value of `lng`
 
 // Additionally, log the constructed path to verify how `{{lng}}` is replaced
 console.log('Constructed URL:', i18next.services.backendConnector.backend.options.loadPath);
