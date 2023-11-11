@@ -7,7 +7,4 @@ import { resolve } from 'path'
 export default defineConfig({
   plugins: [react()],
   base: '/portfolio/',
- build: {
-  minify: false,  
- } 
 })

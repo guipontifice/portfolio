@@ -1,12 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Menu, Transition } from '@headlessui/react';
 import { Fragment } from 'react';
-import { useTranslation, initReactI18next } from 'react-i18next';
 import i18next from 'i18next';
-import cookies from 'js-cookie'
-// import "/Users/guilh/original_portfolio/node_modules/flag-icon-css/css/flag-icons";
-// import "/node_modules/flag-icons/css/flag-icons.min.css";
-// import "../../node_modules/flag-icon-css/css/flag-icons.min.css"
+import cookies from 'js-cookie';
+
 const languages = [
     {
         code: 'en',
@@ -26,14 +23,24 @@ const languages = [
 ]
 
 function LanguageSelector2() {
-
-    const currentLanguageCode = cookies.get('i18next') || 'en';
+    const [currentLanguageCode, setCurrentLanguageCode] = useState(cookies.get('i18next') || 'en');
     const currentLanguage = languages.find(lang => lang.code === currentLanguageCode);
+
     useEffect(() => {
         document.body.dir = currentLanguage.dir || 'ltr';
-    })
-    return (
+    }, [currentLanguage]);
 
+    const changeLanguage = (code) => {
+        setCurrentLanguageCode(code);
+        i18next.changeLanguage(code, (err, t) => {
+            if (err) {
+                console.log('something went wrong loading', err);
+            }
+            console.log('Language is:', i18next.language);
+        });
+    };
+
+    return (
         <div className='absolute'>
             <div className='dropdown'>
                 <Menu as="div" className="relative inline-block text-left w-35 bg-zinc900">
@@ -50,13 +57,13 @@ function LanguageSelector2() {
                         enterFrom="transform opacity-0 scale-95"
                         enterTo="transform opacity-100 scale-100"
                         leave="transition ease-in duration-75"
-                        // leaveFr om="transform opacity-100 scale-100"
+                        // leaveFrom="transform opacity-100 scale-100"
                         leaveTo="transform opacity-0 scale-95"
                     >
                         <ul className="bg-zinc900 dropwdown-menu text-white" aria-labelledby='dropdownMenuButton1'>
                             {languages.map(({ code, name, country_code }) => (
                                 <li className='hover:bg-sky-700' key={country_code} >
-                                    <button className='dropdown-item bg-zinc900' onClick={() => i18next.changeLanguage(code)}
+                                    <button className='dropdown-item bg-zinc900' onClick={() => changeLanguage(code)}
                                         disabled={code === currentLanguageCode}
                                     >
                                         <span className={`flag-icon flag-icon-${country_code} w-5 font-nunito text-gray text-xs hover:text-white items-center mx-1`}></span>

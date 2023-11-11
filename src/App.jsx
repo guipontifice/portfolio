@@ -14,7 +14,6 @@ import i18next from './i18n.js';
 function App() {
   return (
     <div className='bg-zinc900'>
-      <I18nextProvider i18n={i18next}>
         <div className='bg-zinc900 flex justify-center w-full'>
           <Navbar />
           <Routes>
@@ -26,7 +25,6 @@ function App() {
           <Outlet />
         </div>
         <Footer />
-      </I18nextProvider>
     </div>
   )
 }

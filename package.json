@@ -10,8 +10,7 @@
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
-    "test": "jest",
-    "sync": "locize sync --path ./public/locales --project-id 3a474247-0713-4d43-b71a-f714fe4237f3 --api-key 7a74d9f3-4256-488c-9b5c-7b0e7f9735ca"
+    "test": "jest"
   },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
@@ -34,6 +33,7 @@
     "js-cookie": "^3.0.5",
     "locize": "^2.4.6",
     "locize-lastused": "^3.3.2",
+    "path": "^0.12.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-i18next": "^13.3.1",
@@ -59,6 +59,6 @@
     "postcss": "^8.4.31",
     "postcss-import": "^15.1.0",
     "tailwindcss": "^3.3.3",
-    "vite": "^4.4.5"
+    "vite": "^4.5.0"
   }
 }

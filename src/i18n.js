@@ -1,25 +1,40 @@
-import i18next from 'i18next'
-import { useTranslation, initReactI18next } from 'react-i18next';
+import i18next from 'i18next';
+import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
-import HttpApi from 'i18next-http-backend'
+import HttpApi from 'i18next-http-backend';
+import cookies from 'js-cookie';
 
+function getLoadPath() {
+    const lng = cookies.get('i18next') || 'en';
+    const base = import.meta.env.BASE_URL || ''; // Vite base path
+    return `${base}assets/locales/${lng}/translation.json`;
+}
+// Initialize i18next with language detection and HTTP backend
 i18next
-  .use(initReactI18next)
-  .use(LanguageDetector)
-  .use(HttpApi)
-  .init({
-    load: 'languageOnly',
-    addPath: '../public/assets/locales/add/{{lng}}/translation',
-    supportedLngs: ['en', 'fr', 'es', 'pt'],
-    fallbackLgn: "en",
-    detection: {
-      order: ['cookie', 'htmlTag', 'localStorage', 'path', 'subdomain'],
-      caches: ['cookie']
-    },
-    backend: {
-      loadPath: '/portfolio/public/assets/locales/{{lng}}/translation.json'
-    },
-    allowMultiLoading: false,
-  })
+    .use(initReactI18next)
+    .use(LanguageDetector)
+    .use(HttpApi)
+    .init({
+        supportedLngs: ['en', 'fr', 'es', 'pt'],
+        fallbackLng: "en", // fixed a typo in fallbackLng
+        detection: {
+            order: ['path', 'cookie', 'htmlTag', 'localStorage', 'subdomain'],
+            caches: ['cookie']
+        },
+        backend: {
+            loadPath: getLoadPath()
+        },
+    });
 
-export default i18next
+// Use a callback or setTimeout to check language after a delay
+setTimeout(() => {
+
+    i18next.changeLanguage('en', (err, t) => {
+        if (err) return console.log('something went wrong loading', err);
+        console.log('Language is:', i18next.language);
+    });
+}, 500); // Adjust the delay time as needed
+// Introduce a console log to trace the value of `lng`
+
+// Additionally, log the constructed path to verify how `{{lng}}` is replaced
+console.log('Constructed URL:', i18next.services.backendConnector.backend.options.loadPath);
