@@ -6,6 +6,7 @@
 
 @import "tailwindcss/utilities";
 /* @import "./custom-utilities.css"; */
+@import url("../node_modules/flag-icon-css/css/flag-icons.min.css"); ;
 :root {
     background-color: #18181b;
 }

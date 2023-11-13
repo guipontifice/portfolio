@@ -5,7 +5,6 @@ import i18next from 'i18next';
 import cookies from 'js-cookie';
 import '../i18n.js'
 
-
 const languages = [
     {
         code: 'en',

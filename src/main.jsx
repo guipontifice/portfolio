@@ -9,6 +9,7 @@ import Home from './Routes/Home.jsx'
 import Contact from './Routes/Contact.jsx'
 import Projects from './Routes/Projects.jsx'
 import ErrorPage from './Routes/ErrorPage.jsx'
+
 const loadingMarkup = (
   <div className="py-4 text-center">
     <h1>Loading...</h1>
