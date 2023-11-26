@@ -22,6 +22,6 @@
     "contact_name": "Escriba su nombre:",
     "contact_email": "Escriba tu correo eletrónico",
     "contact_message": "Ingrese su mensaje:",
-    "contact_submit": "Mandar"
-  
+    "contact_submit": "Mandar", 
+    "poems_project": "Poems API hecho con JavaScript y React"
   }

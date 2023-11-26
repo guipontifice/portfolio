@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next'
 import timerPhoto from '../../public/assets/images/timer-photo1.jpg'
 import wordlePhoto from '../../public/assets/images/wordle-logo.png'
 import moviePhoto from '../../public/assets/images/moviedatabase-logo.png'
+import poemsPhoto from '../../public/assets/images/shakespeare-icon.jpg'
 
 function Projects() {
   const { t } = useTranslation()
@@ -12,7 +13,8 @@ function Projects() {
     { 
       title: 'Timer', 
       paragraph: t('timer_project'), 
-      githubLink: 'https://github.com/guipontifice/cronometro-react', 
+      githubLink: 'https://github.com/guipontifice/cronometro-react',
+      webLink: 'https://github.com/guipontifice/cronometro-react' ,
       image: timerPhoto 
     },
     { 
@@ -22,10 +24,11 @@ function Projects() {
       image: moviePhoto 
     },
     { 
-      title: 'Wordle Clone', 
-      paragraph: t('wordle_project'), 
-      githubLink: 'https://github.com/guipontifice/WordleClone/tree/main/wordle_project', 
-      image: wordlePhoto
+      title: 'Poems Vee', 
+      paragraph: t('poems_project'), 
+      githubLink: 'https://github.com/guipontifice/poems-vee', 
+      webLink: 'https://guipontifice.github.io/poems-vee/',
+      image: poemsPhoto
     },
   ]
   return (
@@ -37,7 +40,7 @@ function Projects() {
         </div>
         <div className='flex flex-row mt-10'>
           {
-            Projects.map(({ title, paragraph, githubLink, image }) => (
+            Projects.map(({ title, paragraph, githubLink, webLink, image }) => (
               <div className='flex flex-col p-2 h-60 hover:bg-zinc800 w-2/6 border-2 border-zinc900 rounded-2xl'>
                 <img src={image} alt="" className='w-12 h-12 rounded-full' />
                 <h1 className='mt-6 text-white font-medium text-lg'>{title}</h1>
@@ -53,7 +56,7 @@ function Projects() {
                     <ion-icon name="logo-github"></ion-icon>
                   </a>
                   <a
-                    href={githubLink}
+                    href={webLink}
                     className='text-2xl mr-2 cursor-pointer justify-start items-center flex'
                     aria-label='GitHub'
                     rel='noopener'
@@ -73,7 +76,7 @@ function Projects() {
           <p className='text-md text-gray mt-4'>I've worked on a number of projects, but these are my main ones. From time to time, I still look at them and check if something needs to be renewed or recoded.</p>
           <div className='flex flex-col items-center'>
             {
-              Projects.map(({ title, paragraph, githubLink, image }) => (
+              Projects.map(({ title, paragraph, githubLink, weblink, image }) => (
                 <div className='flex flex-col p-2 h-60 hover:bg-zinc800 border-2 border-zinc900 w-7/12 rounded-2xl'>
                   <img src={image} alt="" className='w-12 h-12 rounded-full' />
                   <h1 className='mt-6 text-white font-medium text-lg'>{title}</h1>
@@ -89,7 +92,7 @@ function Projects() {
                       <ion-icon name="logo-github"></ion-icon>
                     </a>
                     <a
-                      href={githubLink}
+                      href={webLink}
                       className='text-2xl mr-2 cursor-pointer justify-start items-center flex'
                       aria-label='GitHub'
                       rel='noopener'
