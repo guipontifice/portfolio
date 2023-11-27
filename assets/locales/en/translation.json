@@ -24,5 +24,6 @@
   "projects_title": "Projects that I made",
   "timer_project": "Timer made with TypeScript",
   "welcome_message": "Welcome!",
-  "wordle_project": "Wordle Clone made with JavaScript"
+  "wordle_project": "Wordle Clone made with JavaScript",
+  "poems_project": "Poems API made with JavaScript and React"
 }
