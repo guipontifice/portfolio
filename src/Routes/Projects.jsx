@@ -76,7 +76,7 @@ function Projects() {
           <p className='text-md text-gray mt-4'>I've worked on a number of projects, but these are my main ones. From time to time, I still look at them and check if something needs to be renewed or recoded.</p>
           <div className='flex flex-col items-center'>
             {
-              Projects.map(({ title, paragraph, githubLink, weblink, image }) => (
+              Projects.map(({ title, paragraph, githubLink, webLink, image }) => (
                 <div className='flex flex-col p-2 h-60 hover:bg-zinc800 border-2 border-zinc900 w-7/12 rounded-2xl'>
                   <img src={image} alt="" className='w-12 h-12 rounded-full' />
                   <h1 className='mt-6 text-white font-medium text-lg'>{title}</h1>
