@@ -22,7 +22,8 @@
   "projects": "Projects",
   "projects_paragraph": "I've worked on a number of projects, but these are my main ones. From time to time, I still look at them and check if something need to be renewed or recoded.",
   "projects_title": "Projects that I made",
-  "timer_project": "Timer made with TypeScript",
+  "investing_project": "Made with JavaScript for internal using of a worker in an Investment Company.",
   "welcome_message": "Welcome!",
-  "wordle_project": "Wordle Clone made with JavaScript"
+  "wordle_project": "Wordle Clone made with JavaScript",
+  "poems_project": "Poems API made with JavaScript and React"
 }

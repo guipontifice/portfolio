@@ -8,21 +8,21 @@ function AboutMe() {
     {
       name: t('about_me_studying'),
       job: t('job_frontend_software_developer'),
-      date: '2023-Present',
+      date: '01/2023-Present',
       key: 'job0',
       key2: 'div0',
     },
     {
       name: 'LSG Sky Chefs',
       job: t('job_pricing_assistant'),
-      date: '2022-2023',
+      date: '07/2022-08/2023',
       key: 'job1',
       key2: 'div1',
     },
     {
       name: 'Mary Help',
       job: t('job_mary_help'),
-      date: '2021-2022',
+      date: '01/2021-12/2022',
       key: 'job2',
       key2: 'div2',
     },
@@ -35,7 +35,7 @@ function AboutMe() {
   ]
   return (
     <>
-      <div className='xxs:hidden xs:hidden sm:hidden flex flex-row justify-start mt-40 font-roboto w-8/12 font-roboto'>
+      <div className='xxs:hidden xs:hidden sm:hidden flex flex-row justify-start mt-40 w-8/12 font-roboto'>
         <div className='flex flex-col w-3/6 '>
           <h1 className='text-2xl font-medium text-white'>{t('about_me_title')}</h1>
           <div className='text-gray mt-7'>
@@ -90,7 +90,7 @@ function AboutMe() {
           </div>
         </div>
       </div>
-      <div className='md:hidden lg:hidden xl:hidden 2xl:hidden flex mr-4 mt-20 font-roboto w-11/12  flex flex-col'>
+      <div className='md:hidden lg:hidden xl:hidden 2xl:hidden mr-4 mt-20 font-roboto w-11/12 flex flex-col'>
         <div className='flex flex-col text-left  mr-4 p-2'>
           <h1 className='text-3xl font-medium text-white'>{t('about_me_title')}</h1>
           <div className='text-lg text-gray mt-7'>

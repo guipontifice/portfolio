@@ -1,26 +1,18 @@
 import React from 'react'
-import Footer from '../Components/Footer'
-import { t } from 'i18next'
 import { useTranslation } from 'react-i18next'
 import timerPhoto from '../../public/assets/images/timer-photo1.jpg'
 import wordlePhoto from '../../public/assets/images/wordle-logo.png'
 import moviePhoto from '../../public/assets/images/moviedatabase-logo.png'
 import poemsPhoto from '../../public/assets/images/shakespeare-icon.jpg'
-
+import stocksPhoto from '../../public/assets/images/stocks.jpg'
 function Projects() {
   const { t } = useTranslation()
   const Projects = [
     { 
-      title: 'Timer', 
-      paragraph: t('timer_project'), 
-      githubLink: 'https://github.com/guipontifice/cronometro-react',
-      webLink: 'https://github.com/guipontifice/cronometro-react' ,
-      image: timerPhoto 
-    },
-    { 
       title: 'Movie Catalog', 
       paragraph: t('movie_project'), 
-      githubLink: 'https://github.com/guipontifice/movie-catalog', 
+      githubLink: 'https://github.com/guipontifice/the-movie-database', 
+      webLink: 'https://guipontifice.github.io/the-movie-database/',
       image: moviePhoto 
     },
     { 
@@ -30,10 +22,17 @@ function Projects() {
       webLink: 'https://guipontifice.github.io/poems-vee/',
       image: poemsPhoto
     },
+    { 
+      title: 'Valorama Assets', 
+      paragraph: t('investing_project'), 
+      githubLink: 'https://github.com/guipontifice/investing-values',
+      webLink: 'https://github.com/guipontifice/investing-values',
+      image: stocksPhoto 
+    },
   ]
   return (
     <>
-      <div className='xxs:hidden xs:hidden sm:hidden flex flex-col justify-start mt-40 font-roboto w-8/12 font-roboto'>
+      <div className='xxs:hidden xs:hidden sm:hidden flex flex-col justify-start mt-40 font-roboto w-8/12'>
         <div className=''>
           <h1 className='font-bold text-4xl text-white'>{t('projects_title')}</h1>
           <p className='text-md text-gray mt-4'>{t('projects_paragraph')}</p>
@@ -70,7 +69,7 @@ function Projects() {
           }
         </div>
       </div>
-      <div className='md:hidden lg:hidden xl:hidden 2xl:hidden flex mr-4 mt-20 font-roboto w-11/12  flex flex-col'>
+      <div className='md:hidden lg:hidden xl:hidden 2xl:hidden flex mr-4 mt-20 font-roboto w-11/12 flex-col'>
         <div className=''>
           <h1 className='font-bold text-5xl text-white'>Projects that I made</h1>
           <p className='text-md text-gray mt-4'>I've worked on a number of projects, but these are my main ones. From time to time, I still look at them and check if something needs to be renewed or recoded.</p>

@@ -24,7 +24,6 @@ function App() {
           </Routes>
           <Outlet />
         </div>
-        <Footer />
     </div>
   )
 }
