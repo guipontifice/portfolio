@@ -13,17 +13,17 @@ import { I18nextProvider } from 'react-i18next';
 import i18next from './i18n.js';
 function App() {
   return (
-    <div className='bg-zinc900'>
-        <div className='bg-zinc900 flex justify-center w-full'>
-          <Navbar />
-          <Routes>
-            <Route path='/portfolio' element={<Home />}></Route>
-            <Route path='/AboutMe' element={<AboutMe />}></Route>
-            <Route path='/Projects' element={<Projects />}></Route>
-            <Route path='/Contact' element={<Contact />}></Route>
-          </Routes>
-          <Outlet />
-        </div>
+    <div className='dark:bg-zinc900 bg-white min-h-screen'>
+      <div className='dark:bg-zinc900 bg-white flex justify-center w-full'>
+        <Navbar />
+        <Routes>
+          <Route path='/portfolio' element={<Home />}></Route>
+          <Route path='/AboutMe' element={<AboutMe />}></Route>
+          <Route path='/Projects' element={<Projects />}></Route>
+          <Route path='/Contact' element={<Contact />}></Route>
+        </Routes>
+        <Outlet />
+      </div>
     </div>
   )
 }

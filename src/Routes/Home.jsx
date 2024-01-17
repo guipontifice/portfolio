@@ -9,7 +9,7 @@ function Home() {
 
   return (
     <>
-      <div className='xxs:hidden xs:hidden sm:hidden flex flex-col justify-start mt-40 font-roboto w-8/12 text-white'>
+      <div className='xxs:hidden xs:hidden sm:hidden flex flex-col justify-start mt-40 font-roboto w-8/12 dark:text-white text-black'>
         <div className='flex w-8/12'>
           <img src={`${profile_photo}`} alt="" className='w-32 rounded-full h-32 mb-10' />
         </div>
@@ -43,7 +43,7 @@ function Home() {
           </a>
         </div>
       </div>
-      <div className='md:hidden lg:hidden xl:hidden 2xl:hidden w-full text-white mx-4 mt-4'>
+      <div className='md:hidden lg:hidden xl:hidden 2xl:hidden w-full dark:text-white text-black mx-4 mt-4'>
         <div className=' flex justify-start mt-16'>
           <h1 className='font-bold text-3xl'>
             {t('welcome_message')}

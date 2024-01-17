@@ -4,6 +4,7 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
@@ -11,7 +12,7 @@ export default {
         roboto: ['Roboto', 'sans']
       },
       screens: {
-        'xxs': { 'min': '0px', 'max': '374px' }, 
+        'xxs': { 'min': '0px', 'max': '374px' },
         'xs': { 'min': '375px', 'max': '639px' },
         'sm': { 'min': '640px', 'max': '767px' },
         // => @media (min-width: 640px and max-width: 767px) { ... }
@@ -33,7 +34,9 @@ export default {
       'zinc900': '#18181b',
       'zinc800': '#212123',
       'white': '#FFFFFF',
-      'gray': '#808080'
+      'gray': '#808080',
+      "whiteShade": "#e5e5e5",
+      "black": "#000000",
     },
   },
 

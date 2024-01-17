@@ -11,7 +11,7 @@ function Footer() {
         { name: t('contact'), link: '/contact'},
     ]
     return (
-        <div className='mt-14 border-t-2 border-zinc800 w-full flex flex-row justify-center'>
+        <div className='xxs:hidden xs:hidden sm:hidden mt-14 border-t-2 dark:bg-zinc900 bg-white dark:text-bg-zinc800 text-white border-zinc800 w-full flex flex-row justify-center'>
             <div className='flex flex-row w-8/12'>
                 {
                     Links.map((link) => (

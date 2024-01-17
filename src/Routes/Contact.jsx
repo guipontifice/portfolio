@@ -33,24 +33,24 @@ function Contact() {
   }
   return (
     <>
-      <div className='xxs:hidden xs:hidden sm:hidden flex flex-col justify-start mt-40 font-roboto w-8/12 text-white'>
+      <div className='xxs:hidden xs:hidden sm:hidden flex flex-col justify-start mt-40 font-roboto w-8/12 dark:text-white text-black'>
         <div className='ml-5'>
-          <h1 className='font-bold text-4xl text-white w-9/12'>{t('contact_title')}</h1>
+          <h1 className='font-bold text-4xl dark:text-white text-black w-9/12'>{t('contact_title')}</h1>
         </div>
         <div className='m-5  flex flex-col justify-start'>
           <div className='flex flex-col mt-2'>
             <form method='post' id='form' className='w-3/6' onSubmit={handleSubmit}>
               <label className='flex flex-col'>
                 {t('contact_name')}
-                <input type="text" name="name" onChange={handleChange} value={data.name} className='hover:border rounded-md bg-zinc800 cursor-pointer mt-2' />
+                <input type="text" name="name" onChange={handleChange} value={data.name} className='hover:border rounded-md dark:bg-zinc800 text-gray cursor-pointer mt-2' />
               </label>
               <label className='flex flex-col mt-2'>
                 {t('contact_email')}
-                <input type="text" name="email" onChange={handleChange} value={data.email} className='hover:border rounded-md bg-zinc800 cursor-pointer mt-2' placeholder='username@email.com' />
+                <input type="text" name="email" onChange={handleChange} value={data.email} className='hover:border rounded-md dark:bg-zinc800 text-gray cursor-pointer mt-2' placeholder='username@email.com' />
               </label>
               <label className='flex flex-col mt-2'>
                 {t('contact_message')}
-                <input type="text" name="message" onChange={handleChange} cols='30' value={data.message} className='hover:border rounded-md bg-zinc800 cursor-pointer mt-2 h-32' />
+                <input type="text" name="message" onChange={handleChange} cols='30' value={data.message} className='hover:border rounded-md dark:bg-zinc800 text-gray cursor-pointer mt-2 h-32' />
               </label>
               <input type="file"
                 name='file'
@@ -61,7 +61,7 @@ function Contact() {
             file:text-sm file:font-semibold
             file:bg-violet-50 file:text-violet-700
             hover:file:bg-violet-100 mt-3 cursor-pointer" />
-              <button onClick={handleSubmit} type='button' className='mt-3 py-2 px-4 border-2 rounded-full text-sm font-bold hover:bg-white hover:text-zinc900 hover:border-zinc900'>{t('contact_submit')}</button>
+              <button onClick={handleSubmit} type='button' className='mt-3 py-2 px-4 border-2 rounded-full text-sm font-bold dark:hover:bg-white hover:bg-black dark:hover:text-zinc900 hover:text-gray dark:hover:border-zinc900 hover:border-gray'>{t('contact_submit')}</button>
             </form>
           </div>
 
@@ -96,22 +96,22 @@ function Contact() {
           </div>
         </div>
       </div>
-      <div className='md:hidden lg:hidden xl:hidden 2xl:hidden flex mr-4 mt-20 font-roboto w-11/12  flex flex-col'>
+      <div className='md:hidden lg:hidden xl:hidden 2xl:hidden mr-4 mt-20 font-roboto w-11/12  flex flex-col'>
         <div className='mt-5'>
-          <h1 className='font-bold text-4xl text-white w-11/12'>{t('contact_title')}</h1>
+          <h1 className='font-bold text-4xl dark:text-white text-black w-11/12'>{t('contact_title')}</h1>
         </div>
-        <form method='post' id='form' className='w-4/6 text-white' onSubmit={handleSubmit}>
+        <form method='post' id='form' className='w-4/6 dark:text-white text-black' onSubmit={handleSubmit}>
           <label className='flex flex-col'>
             {t('contact_name')}
-            <input type="text" name="name" onChange={handleChange} value={data.name} className='hover:border rounded-md bg-zinc800 cursor-pointer mt-2' />
+            <input type="text" name="name" onChange={handleChange} value={data.name} className='hover:border rounded-md dark:bg-zinc800 bg-gray cursor-pointer mt-2' />
           </label>
           <label className='flex flex-col mt-2'>
             {t('contact_email')}
-            <input type="text" name="email" onChange={handleChange} value={data.email} className='hover:border rounded-md bg-zinc800 cursor-pointer mt-2' placeholder='username@email.com' />
+            <input type="text" name="email" onChange={handleChange} value={data.email} className='hover:border rounded-md dark:bg-zinc800 bg-white cursor-pointer mt-2' placeholder='username@email.com' />
           </label>
           <label className='flex flex-col mt-2'>
             {t('contact_message')}
-            <input type="text" name="message" onChange={handleChange} cols='30' value={data.message} className='hover:border rounded-md bg-zinc800 cursor-pointer mt-2 h-32' />
+            <input type="text" name="message" onChange={handleChange} cols='30' value={data.message} className='hover:border rounded-md dark:bg-zinc800 bg-gray cursor-pointer mt-2 h-32' />
           </label>
           <input type="file"
             name='file'
@@ -122,7 +122,7 @@ function Contact() {
             file:text-sm file:font-semibold
             file:bg-violet-50 file:text-violet-700
             hover:file:bg-violet-100 mt-3 cursor-pointer" />
-          <button onClick={handleSubmit} type='button' className='mt-3 py-2 px-4 border-2 rounded-full text-sm font-bold hover:bg-white hover:text-zinc900 hover:border-zinc900'>{t('contact_submit')}</button>
+          <button onClick={handleSubmit} type='button' className='mt-3 py-2 px-4 border-2 rounded-full text-sm font-bold dark:hover:bg-white hover:bg-black dark:hover:text-zinc900 hover:text-gray dark:hover:border-zinc900 hover:border-gray '>{t('contact_submit')}</button>
         </form>
       </div>
     </>
