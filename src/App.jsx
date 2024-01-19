@@ -3,14 +3,12 @@ import Navbar from './Components/Navbar'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css'
 import { Outlet } from 'react-router-dom';
-import Footer from './Components/Footer';
 import AboutMe from './Routes/AboutMe';
 import Home from './Routes/Home';
 import Projects from './Routes/Projects';
 import Contact from './Routes/Contact';
 import './i18n.js'
-import { I18nextProvider } from 'react-i18next';
-import i18next from './i18n.js';
+
 function App() {
   return (
     <div className='dark:bg-zinc900 bg-white min-h-screen'>

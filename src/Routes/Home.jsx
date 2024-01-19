@@ -2,8 +2,6 @@ import React from 'react'
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import  profile_photo  from '../../public/assets/images/profile-photo.jpeg'
-
-
 function Home() {
   const { t } = useTranslation()
 

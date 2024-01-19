@@ -3,7 +3,6 @@ import { Menu, Transition } from '@headlessui/react';
 import { Fragment } from 'react';
 import i18next from 'i18next';
 import cookies from 'js-cookie';
-import '../i18n.js'
 
 const languages = [
     {

@@ -5,8 +5,9 @@
 /** @type {import('jest').Config} */
 const config = {
   verbose: true,
-  testMatch: ["**/__tests__/**/*.js", "**/?(*.)+(spec|test).js"],
+  testMatch: ["**/__tests__/**/*.js", "**/?(*.)+(spec|test).js", "**/__tests__/**/*.cjs"],
   testEnvironment: 'jsdom',
+  setupFilesAfterEnv: ["<rootDir>/src/tests/Navbar.test.js"],
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
