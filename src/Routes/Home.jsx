@@ -1,7 +1,10 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import  profile_photo  from '../../public/assets/images/profile-photo.jpeg'
+import profile_photo from '../../public/assets/images/profile-photo.jpeg'
+import AboutMe from './AboutMe';
+import Projects from './Projects';
+import Contact from './Contact';
 function Home() {
   const { t } = useTranslation()
 
@@ -75,6 +78,11 @@ function Home() {
         </div>
         <div className='mt-16 flex justify-center'>
           <img src={profile_photo} alt="" className='w-32 rounded-full h-32 mb-10' />
+        </div>
+        <div>
+          <AboutMe />
+          <Projects />
+          <Contact />
         </div>
       </div>
     </>

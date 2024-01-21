@@ -26,27 +26,7 @@ function Navbar() {
         {/* Mobile Navigation */}
         <div className='mx-5 my-3 md:hidden lg:hidden xl:hidden 2xl:hidden flex flex-row justify-between dark:bg-zinc900'>
           <div className=''><LanguageSelector2 /></div>
-          <button
-            id='menuButton'
-            type='button'
-            className='text-2xl z-20'
-            aria-label='Menu'
-            aria-expanded='true'
-            onClick={() => setShowSidebar(!showSidebar)}
-          >
-            <ion-icon name={showSidebar ? 'close' : 'menu'} className='fixed z-50'></ion-icon>
-          </button>
-          <ul className={`font-roboto text-white font-medium flex flex-col justify-around fixed top-0 right-0 w-0 transition-all duration-300 ease-in-out overflow-hidden dark:bg-zinc900 bg-white ${showSidebar ? 'w-screen h-screen' : 'w-0'} z-10`}>
-            {
-              showSidebar ? (
-                Links.map((link) => (
-                  <NavLink onClick={() => handleLinkClick(link.link)} key={link.name} to={link.link} className={`items-center text-xl flex justify-around`}>
-                    <span className={`flex flex-column m-5 duration-400`}>{link.name}</span>
-                  </NavLink>
-                ))
-              )
-                : null}
-          </ul>
+          <div className=''><DarkMode /></div>
         </div>
       </div>
       <div className="xxs:hidden xs:hidden sm:hidden flex flex-row justify-between w-8/12 mt-4 md:flex-wrap-reverse absolute">
