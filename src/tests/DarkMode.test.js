@@ -11,14 +11,14 @@ describe('Darkmode Component', () => {
     })
 });
 
-if ('has a button in the document', () => {
+it ('has a button in the document', () => {
 
     const { getByRole } = render(<DarkMode />);
     const button = getByRole('button');
     expect(button).toBeInTheDocument();
 });
 
-if ('sets the initial theme correctly ', () => {
+it ('sets the initial theme correctly ', () => {
     matchMedia = jest.fn().mockImplementation((query) => {
         return {
             matches: query === '(prefers-color-scheme: dark)',
@@ -26,17 +26,17 @@ if ('sets the initial theme correctly ', () => {
             removeEventListener: jest.fn(),
         };
     });
-    const { getByRole } = render(<DarkMode />);
-    const button = getByRole('button', { name: /Menu/i });
-    expect(button).toHaveClass('dark');
+    render(<DarkMode />);
+    expect(document.documentElement.classList.contains('dark')).toBe(true);
 });
 
 it('toggles theme when button is clicked', () => {
     const { getByRole } = render(<DarkMode />);
     const button = getByRole('button', { name: /Menu/i});
     fireEvent.click(button);
-    expect(button).not.toHaveClass('dark');
+    expect(document.documentElement.classList.contains('dark')).toBe(false);
     fireEvent.click(button);
+    expect(document.documentElement.classList.contains('dark')).toBe(true);
 });
 
     global.matchMedia = global.matchMedia || function () {

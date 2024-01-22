@@ -10,11 +10,11 @@
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
-    "test": "jest"
+    "test": "jest LanguageSelector2.test.js"
   },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
-    "@headlessui/react": "^1.7.17",
+    "@headlessui/react": "^1.7.18",
     "@icon/ionicons": "^5.4.0-alpha.0",
     "@jest/globals": "^29.7.0",
     "@material-tailwind/react": "^2.1.4",

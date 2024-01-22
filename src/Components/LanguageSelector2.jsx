@@ -72,7 +72,7 @@ function LanguageSelector2() {
                                 <li className='hover:bg-sky-700' key={country_code} >
                                     <button className='dropdown-item dark:bg-zinc900 bg-white' onClick={() => changeLanguage(code)}
                                         disabled={code === currentLanguageCode}
-                                    >
+                                        data-testid={`Language Selector`}>
                                         <span className={`flag-icon flag-icon-${country_code} w-5 font-nunito dark:text-gray text-zinc900text-xs dark:hover:text-white hover:text-black items-center mx-1`}></span>
                                         <span className='w-5 font-nunito dark:text-gray text-zinc900 text-xs dark:hover:text-white hover:text-black items-center mx-2'>{name}</span>
                                     </button>
