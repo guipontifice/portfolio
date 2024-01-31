@@ -1,6 +1,6 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
-import profile_photo from '../../public/assets/images/profile-photo.jpeg'
+import profile_photo from '../../public/assets/images/profile-photo-1.jpeg'
 
 function AboutMe() {
   const { t } = useTranslation()
