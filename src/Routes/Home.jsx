@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useTransition } from 'react'
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import profile_photo from '../../public/assets/images/profile-photo.jpeg'
@@ -7,7 +7,8 @@ import Projects from './Projects';
 import Contact from './Contact';
 function Home() {
   const { t } = useTranslation()
-
+  const [startTransition, isPending] = useTransition({});
+  
   return (
     <>
       <div className='xxs:hidden xs:hidden sm:hidden flex flex-col justify-start mt-40 font-roboto w-8/12 dark:text-white text-black'>
