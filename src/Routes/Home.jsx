@@ -15,8 +15,8 @@ function Home() {
         <div className='flex w-8/12'>
           <img src={`${profile_photo}`} alt="" className='w-32 rounded-full h-32 mb-10' />
         </div>
-        <div>
-          <h1 className='font-bold text-4xl mb-5'>
+        <div className=''>
+          <h1 className='animate-pulse transition-shadow font-bold text-4xl mb-5'>
             {t('welcome_message')}
           </h1>
           <p className='font-medium text-md mb-1'>{t('introduction')} </p>
