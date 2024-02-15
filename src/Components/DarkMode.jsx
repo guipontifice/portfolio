@@ -12,8 +12,12 @@ function DarkMode() {
     }, []);
     useEffect(() => {
         if (theme === 'dark') {
+            localStorage.setItem('theme', 'dark');
+            console.log('themeLocalStorage', localStorage.getItem('theme'))
             document.documentElement.classList.add('dark');
         } else {
+            localStorage.removeItem('theme');
+            console.log('themeLocalStorage', localStorage.getItem('theme'))
             document.documentElement.classList.remove('dark');
         }
     })

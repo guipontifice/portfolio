@@ -22,10 +22,10 @@ function AboutMe() {
         </div>
         <div className='flex flex-col items-center w-6/12 ml-20 '>
           <img src={profile_photo} alt="" className='w-40 rounded-full h-40 mb-10' />
-          <div className='mt-5 text-2xl flex flex-col dark:text-white text-gray'>
+          <div className='mt-5 text-2xl flex flex-col dark:text-white text-black'>
             <a
               href='https://github.com/guipontifice'
-              className='flex text-2xl z-20 m-1 cursor-pointer'
+              className='flex text-2xl z-20 m-1 cursor-pointer hover:animate-bounce'
               aria-label='GitHub'
               rel='noopener'
               target='_blank'
@@ -35,7 +35,7 @@ function AboutMe() {
             </a>
             <a
               href='https://www.linkedin.com/in/guilhermepontifice'
-              className='flex text-2xl z-20 m-1 cursor-pointer'
+              className='flex text-2xl z-20 m-1 cursor-pointer hover:animate-bounce'
               aria-label='Linkedin'
               rel='noopener'
               target='_blank'
@@ -49,7 +49,7 @@ function AboutMe() {
       <div className='md:hidden lg:hidden xl:hidden 2xl:hidden mr-4 mt-20 font-roboto w-11/12 flex flex-col'>
         <div className='flex flex-col text-left  mr-4 p-2'>
           <h1 className='text-3xl font-medium dark:text-white text-black'>{t('about_me_title')}</h1>
-          <div className='text-lg dark:text-gray text-zinc800 mt-7'>
+          <div className='text-lg dark:text-dark text-zinc800 mt-7'>
             <p>{t('about_me_text')}</p>
           </div>
           <div className='text-lg  dark:text-gray text-zinc800 mt-5'>

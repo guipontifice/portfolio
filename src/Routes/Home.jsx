@@ -1,13 +1,17 @@
-import React, { useTransition } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import profile_photo from '../../public/assets/images/profile-photo.jpeg'
+import profile_photo from '../../public/assets/images/profile-photo.jpeg';
+import jsLogo from '../../public/assets/images/javascript-icon.png';
+import tsLogo from '../../public/assets/images/typescript-icon.png';
+import reactLogo from '../../public/assets/images/react-icon.png';
+import jestLogo from '../../public/assets/images/jest-icon.png';
+import nextLogo from '../../public/assets/images/nextjs-icon.png';
 import AboutMe from './AboutMe';
 import Projects from './Projects';
 import Contact from './Contact';
 function Home() {
   const { t } = useTranslation()
-  const [startTransition, isPending] = useTransition({});
   
   return (
     <>
@@ -27,22 +31,29 @@ function Home() {
         <div className='mt-5 text-2xl flex justify-start'>
           <a
             href='https://github.com/guipontifice'
-            className='text-2xl mr-2 cursor-pointer'
+            className='text-2xl mr-2 cursor-pointer hover:animate-bounce'
             aria-label='GitHub'
             rel='noopener'
-            target='_blank'
+            target='_blank' 
           >
             <ion-icon name="logo-github"></ion-icon>
           </a>
           <a
             href='https://www.linkedin.com/in/guilhermepontifice'
-            className='text-2xl mr-2 cursor-pointer'
+            className='text-2xl mr-2 cursor-pointer hover:animate-bounce'
             aria-label='Linkedin'
             rel='noopener'
             target='_blank'
           >
             <ion-icon name="logo-linkedin"></ion-icon>
           </a>
+        </div>
+        <div className='flex flex-row mt-8'>
+          <img src={jsLogo} className='hover:animate-bounce' alt="" />
+          <img src={tsLogo} className='hover:animate-bounce' alt="" />
+          <img src={reactLogo} className='hover:animate-bounce' alt="" />
+          <img src={jestLogo} className='hover:animate-bounce' alt="" />
+          <img src={nextLogo} className='hover:animate-bounce' alt="" />
         </div>
       </div>
       <div className='md:hidden lg:hidden xl:hidden 2xl:hidden w-full dark:text-white text-black mx-4 mt-4'>

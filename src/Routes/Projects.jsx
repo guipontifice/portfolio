@@ -47,7 +47,7 @@ function Projects() {
                 <div className='mt-5 dark:text-white text-black text-xl flex'>
                   <a
                     href={githubLink}
-                    className='text-2xl mr-2 cursor-pointer justify-start items-center flex'
+                    className='text-2xl mr-2 cursor-pointer justify-start items-center flex hover:animate-bounce'
                     aria-label='GitHub'
                     rel='noopener'
                     target='_blank'
@@ -56,7 +56,7 @@ function Projects() {
                   </a>
                   <a
                     href={webLink}
-                    className='text-2xl mr-2 cursor-pointer justify-start items-center flex'
+                    className='text-2xl mr-2 cursor-pointer justify-start items-center flex hover:animate-bounce'
                     aria-label='GitHub'
                     rel='noopener'
                     target='_blank'
