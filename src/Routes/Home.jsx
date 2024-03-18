@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import profile_photo from '../../public/assets/images/profile-photo.jpeg';
+import avatar from '../../public/assets/images/avatar.png';
 import jsLogo from '../../public/assets/images/javascript-icon.png';
 import tsLogo from '../../public/assets/images/typescript-icon.png';
 import reactLogo from '../../public/assets/images/react-icon.png';
@@ -17,7 +17,7 @@ function Home() {
     <>
       <div className='xxs:hidden xs:hidden sm:hidden flex flex-col justify-start mt-40 font-roboto w-8/12 dark:text-white text-black'>
         <div className='flex w-8/12'>
-          <img src={`${profile_photo}`} alt="" className='w-32 rounded-full h-32 mb-10' />
+          <img src={`${avatar}`} alt="" className='w-32 rounded-full h-32 mb-10' />
         </div>
         <div className=''>
           <h1 className='animate-pulse transition-shadow font-bold text-4xl mb-5'>
@@ -89,7 +89,7 @@ function Home() {
           </a>
         </div>
         <div className='mt-16 flex justify-center'>
-          <img src={profile_photo} alt="" className='w-32 rounded-full h-32 mb-10' />
+          <img src={avatar} alt="" className='w-32 rounded-full h-32 mb-10' />
         </div>
         <div>
           <AboutMe />

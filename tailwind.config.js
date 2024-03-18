@@ -37,6 +37,10 @@ export default {
       'gray': '#808080',
       "whiteShade": "#e5e5e5",
       "black": "#000000",
+      "purple": "#7B4AE2",
+      "page": "#0C0F17",
+      "navbar": "#7b4ae2"
+      // rgba(123, 74, 226, 0.15
     },
   },
 

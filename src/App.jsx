@@ -11,8 +11,8 @@ import './i18n.js'
 
 function App() {
   return (
-    <div className='dark:bg-zinc900 bg-white min-h-screen'>
-      <div className='dark:bg-zinc900 bg-white flex justify-center w-full'>
+    <div className='dark:bg-page bg-white min-h-screen'>
+      <div className='dark:bg-page bg-white flex flex-col items-center w-full border'>
         <Navbar />
         <Routes>
           <Route path='/portfolio' element={<Home />}></Route>
