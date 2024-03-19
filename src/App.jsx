@@ -12,15 +12,19 @@ import './i18n.js'
 function App() {
   return (
     <div className='dark:bg-page bg-white min-h-screen'>
-      <div className='dark:bg-page bg-white flex flex-col items-center w-full border'>
-        <Navbar />
-        <Routes>
+      <div className='dark:bg-page bg-white flex flex-col items-center w-full'>
+          <Navbar />
+        <Home />
+        <AboutMe />
+        <Projects />
+        <Contact />
+        {/* <Routes>
           <Route path='/portfolio' element={<Home />}></Route>
           <Route path='/AboutMe' element={<AboutMe />}></Route>
           <Route path='/Projects' element={<Projects />}></Route>
           <Route path='/Contact' element={<Contact />}></Route>
-        </Routes>
-        <Outlet />
+        </Routes> */}
+        {/* <Outlet /> */}
       </div>
     </div>
   )

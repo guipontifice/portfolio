@@ -22,7 +22,7 @@ function Navbar() {
 
   return (
     <>
-      <div className='xxs:hidden xs:hidden sm:hidden flex justify-center w-11/12 h-14 mt-8 bg-navbar bg-opacity-20 rounded-2xl '>
+      <div className='fixed xxs:hidden xs:hidden sm:hidden flex justify-center w-11/12 h-14 mt-8 bg-navbar bg-opacity-50 rounded-2xl '>
         <div className='flex items-center'>
           {Links.map((link, index) => (
             <Link

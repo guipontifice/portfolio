@@ -2,99 +2,56 @@ import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import avatar from '../../public/assets/images/avatar.png';
-import jsLogo from '../../public/assets/images/javascript-icon.png';
-import tsLogo from '../../public/assets/images/typescript-icon.png';
-import reactLogo from '../../public/assets/images/react-icon.png';
-import jestLogo from '../../public/assets/images/jest-icon.png';
-import nextLogo from '../../public/assets/images/nextjs-icon.png';
-import AboutMe from './AboutMe';
-import Projects from './Projects';
-import Contact from './Contact';
 function Home() {
   const { t } = useTranslation()
-  
+
   return (
     <>
-      <div className='xxs:hidden xs:hidden sm:hidden flex flex-col justify-start mt-40 font-roboto w-8/12 dark:text-white text-black'>
-        <div className='flex w-8/12'>
-          <img src={`${avatar}`} alt="" className='w-32 rounded-full h-32 mb-10' />
-        </div>
-        <div className=''>
-          <h1 className='animate-pulse transition-shadow font-bold text-4xl mb-5'>
-            {t('welcome_message')}
+      <div className='xxs:hidden xs:hidden sm:hidden flex flex-row items-center justify-between mt-40 font-roboto w-10/12 dark:text-white text-black mb-64'>
+        <div className='text-white h-96 mt-28'>
+          <p>Olá! Emoji</p>
+          <h1 className='font-bold text-5xl mb-5 break-normal'>
+            Guilherme Pontifice
           </h1>
-          <p className='font-medium text-md mb-1'>{t('introduction')} </p>
+          <p className='text-lg mb-1 text-white text-opacity-50'>Front-end Developer</p>
+          <div className='mt-5 text-2xl flex justify-start text-white text-opacity-50'>
+            <a
+              href='https://github.com/guipontifice'
+              className='text-4xl mr-2 cursor-pointer hover:text-white'
+              aria-label='GitHub'
+              rel='noopener'
+              target='_blank'
+            >
+              <ion-icon name="logo-github"></ion-icon>
+            </a>
+            <a
+              href='https://www.linkedin.com/in/guilhermepontifice'
+              className='text-4xl mr-2 cursor-pointer hover:text-white'
+              aria-label='Linkedin'
+              rel='noopener'
+              target='_blank'
+            >
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </div>
         </div>
-        <div className=''>
-          <p>{t('main')}</p>
+        <div className='flex w-10/12 justify-center'>
+          <img src={`${avatar}`} alt="" className='w-2/6 rounded-full h-2/6 mb-10' />
         </div>
-        <div className='mt-5 text-2xl flex justify-start'>
-          <a
-            href='https://github.com/guipontifice'
-            className='text-2xl mr-2 cursor-pointer hover:animate-bounce'
-            aria-label='GitHub'
-            rel='noopener'
-            target='_blank' 
-          >
-            <ion-icon name="logo-github"></ion-icon>
-          </a>
-          <a
-            href='https://www.linkedin.com/in/guilhermepontifice'
-            className='text-2xl mr-2 cursor-pointer hover:animate-bounce'
-            aria-label='Linkedin'
-            rel='noopener'
-            target='_blank'
-          >
-            <ion-icon name="logo-linkedin"></ion-icon>
-          </a>
-        </div>
-        <div className='flex flex-row mt-8'>
-          <img src={jsLogo} className='hover:animate-bounce' alt="" />
-          <img src={tsLogo} className='hover:animate-bounce' alt="" />
-          <img src={reactLogo} className='hover:animate-bounce' alt="" />
-          <img src={jestLogo} className='hover:animate-bounce' alt="" />
-          <img src={nextLogo} className='hover:animate-bounce' alt="" />
-        </div>
-      </div>
-      <div className='md:hidden lg:hidden xl:hidden 2xl:hidden w-full dark:text-white text-black mx-4 mt-4'>
-        <div className=' flex justify-start mt-16'>
-          <h1 className='font-bold text-3xl'>
-            {t('welcome_message')}
-          </h1>
-        </div>
-        <div className='mt-5'>
-          <p className='font-normal'>{t('introduction')}</p>
-        </div>
-        <div className='mt-4'>
-          <p>{t('main')}</p>
-        </div>
-        <div className='mt-5 text-xl '>
-          <a
-            href='https://github.com/guipontifice'
-            className='text-2xl mr-2 cursor-pointer'
-            aria-label='GitHub'
-            rel='noopener'
-            target='_blank'
-          >
-            <ion-icon name="logo-github"></ion-icon>
-          </a>
-          <a
-            href='https://www.linkedin.com/in/guilhermepontifice'
-            className='text-2xl mr-2 cursor-pointer'
-            aria-label='Linkedin'
-            rel='noopener'
-            target='_blank'
-          >
-            <ion-icon name="logo-linkedin"></ion-icon>
-          </a>
-        </div>
-        <div className='mt-16 flex justify-center'>
-          <img src={avatar} alt="" className='w-32 rounded-full h-32 mb-10' />
-        </div>
-        <div>
-          <AboutMe />
-          <Projects />
-          <Contact />
+        <div className='flex flex-col mt-8 text-lg text-purple text-opacity-50 cursor-pointer  h-96'>
+          <div className='flex m-2 mt-32 justify-end hover:opacity-50 hover:transition-opacity'>
+            Baixar CV
+            <div className='ml-2'>
+              <ion-icon name="download-outline"></ion-icon>
+            </div>
+          </div>
+          <div className='flex justify-center p-3 border w-52 h-12 items-center text-md rounded-xl hover:bg-purple hover:bg-opacity-20 hover:border-0'>
+            <div className='flex items-center mr-2'>
+              <ion-icon name="logo-whatsapp"></ion-icon>
+            </div>
+            Vamos Conversar!
+          </div>
+
         </div>
       </div>
     </>
