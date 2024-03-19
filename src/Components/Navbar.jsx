@@ -4,7 +4,6 @@ import { Link, NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import LanguageSelector2 from './LanguageSelector2';
 import DarkMode from './DarkMode';
-
 function Navbar() {
   const { t } = useTranslation()
   const [showSidebar, setShowSidebar] = useState(false);
@@ -22,7 +21,7 @@ function Navbar() {
 
   return (
     <>
-      <div className='fixed xxs:hidden xs:hidden sm:hidden flex justify-center w-11/12 h-14 mt-8 bg-navbar bg-opacity-50 rounded-2xl '>
+      <div className='fixed xxs:hidden xs:hidden sm:hidden flex justify-center w-11/12 h-14 mt-8 bg-navbar rounded-2xl'>
         <div className='flex items-center'>
           {Links.map((link, index) => (
             <Link

@@ -8,46 +8,57 @@ import stocksPhoto from '../../public/assets/images/stocks.jpg'
 function Projects() {
   const { t } = useTranslation()
   const Projects = [
-    { 
-      title: 'Movie Catalog', 
-      paragraph: t('movie_project'), 
-      githubLink: 'https://github.com/guipontifice/the-movie-database', 
+    {
+      title: 'Movie Catalog',
+      paragraph: t('movie_project'),
+      githubLink: 'https://github.com/guipontifice/the-movie-database',
       webLink: 'https://guipontifice.github.io/the-movie-database/',
-      image: moviePhoto 
+      image: moviePhoto,
+      technologies: ['React', 'JavaScript', 'TailwindCSS', 'Vite', 'GitHub Pages']
     },
-    { 
-      title: 'Poems Vee', 
-      paragraph: t('poems_project'), 
-      githubLink: 'https://github.com/guipontifice/poems-vee', 
+    {
+      title: 'Poems Vee',
+      paragraph: t('poems_project'),
+      githubLink: 'https://github.com/guipontifice/poems-vee',
       webLink: 'https://guipontifice.github.io/poems-vee/',
-      image: poemsPhoto
+      image: poemsPhoto,
+      technologies: ['React', 'JavaScript', 'TailwindCSS', 'GitHub Pages']
     },
-    { 
-      title: 'Valorama Assets', 
-      paragraph: t('investing_project'), 
+    {
+      title: 'Valorama Assets',
+      paragraph: t('investing_project'),
       githubLink: 'https://github.com/guipontifice/investing-values',
       webLink: 'https://github.com/guipontifice/investing-values',
-      image: stocksPhoto 
+      image: stocksPhoto,
+      technologies: ['React', 'JavaScript', 'NodeJS']
     },
   ]
   return (
     <>
-      <div className='xxs:hidden xs:hidden sm:hidden flex flex-col justify-start mt-40 font-roboto w-8/12'>
-        <div className=''>
-          <h1 className='font-bold text-4xl dark:text-white text-black'>{t('projects_title')}</h1>
-          <p className='text-md dark:text-gray text-zinc800 mt-4'>{t('projects_paragraph')}</p>
-        </div>
-        <div className='flex flex-row mt-10'>
+      <div className='xxs:hidden xs:hidden sm:hidden flex flex-col justify-center mt-40 w-10/12 font-roboto'>
+        <h1 className='text-white text-5xl font-semibold'>Trabalhos e Projetos</h1>
+        <div className='mt-10 grid grid-cols-3 justify-center '>
           {
-            Projects.map(({ title, paragraph, githubLink, webLink, image }) => (
-              <div className='flex flex-col p-2 h-60 w-2/6 border-2 dark:hover:bg-zinc800 hover:bg-whiteShade border-zinc900 rounded-2xl'>
-                <img src={image} alt="" className='w-12 h-12 rounded-full' />
-                <h1 className='mt-6 dark:text-white text-black font-medium text-lg'>{title}</h1>
-                <p className='dark:text-gray text-zinc800 text-sm'>{paragraph}</p>
-                <div className='mt-5 dark:text-white text-black text-xl flex'>
+            Projects.map((project, index) => (
+              <div key={index} className='w-10/12 p-7 m-5 border rounded-2xl text-purple hover:bg-purple hover:bg-opacity-10 hover:border-0'>
+                <div className='flex flex-col items-start'>
+                  <h2 className='text-white font-semibold text-xl'>{project.title}</h2>
+                  <p className='text-gray text-md mt-5'>{project.paragraph}</p>
+                </div>
+                <div className='flex border w-auto h-auto mt-2 '>
+                  {
+                    project.technologies.map((technology, index) => (
+                      <span key={index} className='text-purple p-1 rounded-xl mx-1 border text-opacity-50'>{technology}</span>
+                    ))
+                  }
+                </div>
+                <div className='flex flex-row justify-center mt-10 items-center'>
+                  <img src={project.image} alt="" className='w-64 h-56 rounded-md ' />
+                </div>
+                <div className='flex flex-row mt-10 text-white opacity-50 hover:opacity-100'>
                   <a
-                    href={githubLink}
-                    className='text-2xl mr-2 cursor-pointer justify-start items-center flex hover:animate-bounce'
+                    href={project.githubLink}
+                    className='text-4xl mr-2 cursor-pointer hover:text-purple'
                     aria-label='GitHub'
                     rel='noopener'
                     target='_blank'
@@ -55,55 +66,18 @@ function Projects() {
                     <ion-icon name="logo-github"></ion-icon>
                   </a>
                   <a
-                    href={webLink}
-                    className='text-2xl mr-2 cursor-pointer justify-start items-center flex hover:animate-bounce'
-                    aria-label='GitHub'
+                    href={project.webLink}
+                    className='text-4xl mr-2 cursor-pointer hover:text-purple'
+                    aria-label='Web'
                     rel='noopener'
                     target='_blank'
                   >
-                    <ion-icon name="logo-google"></ion-icon>
+                    <ion-icon name="globe-outline"></ion-icon>
                   </a>
                 </div>
               </div>
             ))
           }
-        </div>
-      </div>
-      <div className='md:hidden lg:hidden xl:hidden 2xl:hidden flex mr-4 mt-20 font-roboto w-11/12 flex-col'>
-        <div className=''>
-          <h1 className='font-bold text-5xl dark:text-white text-black'>Projects that I made</h1>
-          <p className='text-md dark:text-gray text-zinc800 mt-4'>I've worked on a number of projects, but these are my main ones. From time to time, I still look at them and check if something needs to be renewed or recoded.</p>
-          <div className='flex flex-col items-center'>
-            {
-              Projects.map(({ title, paragraph, githubLink, webLink, image }) => (
-                <div className='flex flex-col p-2 h-60 dark:hover:bg-gray hover:bg-gray border-2 dark:border-zinc900 border-gray w-7/12 rounded-2xl'>
-                  <img src={image} alt="" className='w-12 h-12 rounded-full' />
-                  <h1 className='mt-6 dark:text-white text-black font-medium text-lg'>{title}</h1>
-                  <p className='dark:text-gray text-zinc800 text-sm'>{paragraph}</p>
-                  <div className='mt-5 dark:text-white text-black text-xl flex'>
-                    <a
-                      href={githubLink}
-                      className='text-2xl mr-2 cursor-pointer justify-start items-center flex'
-                      aria-label='GitHub'
-                      rel='noopener'
-                      target='_blank'
-                    >
-                      <ion-icon name="logo-github"></ion-icon>
-                    </a>
-                    <a
-                      href={webLink}
-                      className='text-2xl mr-2 cursor-pointer justify-start items-center flex'
-                      aria-label='GitHub'
-                      rel='noopener'
-                      target='_blank'
-                    >
-                      <ion-icon name="logo-google"></ion-icon>
-                    </a>
-                  </div>
-                </div>
-              ))
-            }
-          </div>
         </div>
       </div>
     </>

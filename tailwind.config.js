@@ -39,7 +39,8 @@ export default {
       "black": "#000000",
       "purple": "#7B4AE2",
       "page": "#0C0F17",
-      "navbar": "#7b4ae2"
+      "navbar": "#1c1031"
+      // "navbar": "#1e113e"
       // rgba(123, 74, 226, 0.15
     },
   },
