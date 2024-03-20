@@ -7,6 +7,8 @@ import AboutMe from './Routes/AboutMe';
 import Home from './Routes/Home';
 import Projects from './Routes/Projects';
 import Contact from './Routes/Contact';
+import Skills from './Routes/Skills.jsx';
+import Works from './Routes/Works.jsx';
 import './i18n.js'
 
 function App() {
@@ -17,6 +19,8 @@ function App() {
         <Home />
         <AboutMe />
         <Projects />
+        <Skills />
+        <Works />
         <Contact />
         {/* <Routes>
           <Route path='/portfolio' element={<Home />}></Route>

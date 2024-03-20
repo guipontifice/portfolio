@@ -7,15 +7,15 @@ function AboutMe() {
 
   return (
     <>
+      <div className='xxs:hidden xs:hidden sm:hidden md:hidden'>
+        <h2 className='flex items-center justify-center mt-32 text-purple text-xl bg-purple bg-opacity-20 rounded-xl p-3 w-full font-semibold'>👋 Sobre Mim</h2>
+      </div>
       <div className="xxs:hidden xs:hidden sm:hidden md:hidden w-10/12 flex flex-row items-center justify-between align-middle ">
         <div className=''>
           <img src={profile_photo} alt="" className='w-60 h-64 rounded-full' />
         </div>
         <div className='flex flex-col 2xl:mr-52'>
-          <div className='flex flex-row justify-center items-center bg-purple bg-opacity-10 hover:bg-opacity-20 border-0 rounded-2xl w-52 h-16 text-purple text-2xl font-semibold mb-10'>
-            <span className='mx-1'>{<Emoji unified="1f44b" size="25" />}</span>
-            <h2 className='mx-1'>Sobre Mim</h2>
-          </div>
+
           <h1 className='text-white text-3xl font-semibold mt-10'>
             Guilherme Pontifice Pauferro
           </h1>

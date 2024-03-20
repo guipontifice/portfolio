@@ -10,7 +10,7 @@ function Home() {
 
   return (
     <>
-      <div className='xxs:hidden xs:hidden sm:hidden md:hidden flex flex-row items-center justify-between mt-40 font-roboto w-10/12 dark:text-white text-black mb-64'>
+      <div className='xxs:hidden xs:hidden sm:hidden md:hidden flex flex-row items-center justify-between mt-40 font-roboto w-10/12 dark:text-white text-black mb-40'>
         <div className='text-white h-96 mt-36'>
           <div className='flex flex-row justify-center items-center bg-purple bg-opacity-10 hover:bg-opacity-20 border-0 rounded-2xl w-36 h-16 text-purple text-2xl font-semibold mb-10'>
             <span className='mx-1'>{<Emoji unified="1f44b" size="25" />}</span>

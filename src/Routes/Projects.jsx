@@ -14,7 +14,7 @@ function Projects() {
       githubLink: 'https://github.com/guipontifice/the-movie-database',
       webLink: 'https://guipontifice.github.io/the-movie-database/',
       image: moviePhoto,
-      technologies: ['React', 'JavaScript', 'TailwindCSS', 'Vite', 'GitHub Pages']
+      technologies: ['Online', 'React', 'JavaScript', 'TailwindCSS', 'Vite']
     },
     {
       title: 'Poems Vee',
@@ -22,7 +22,7 @@ function Projects() {
       githubLink: 'https://github.com/guipontifice/poems-vee',
       webLink: 'https://guipontifice.github.io/poems-vee/',
       image: poemsPhoto,
-      technologies: ['React', 'JavaScript', 'TailwindCSS', 'GitHub Pages']
+      technologies: ['Online', 'React', 'JavaScript', 'TailwindCSS', 'Vite']
     },
     {
       title: 'Valorama Assets',
@@ -30,14 +30,14 @@ function Projects() {
       githubLink: 'https://github.com/guipontifice/investing-values',
       webLink: 'https://github.com/guipontifice/investing-values',
       image: stocksPhoto,
-      technologies: ['React', 'JavaScript', 'NodeJS']
+      technologies: ['Beta', 'React', 'JavaScript', 'NodeJS']
     },
   ]
   return (
     <>
       <div className='xxs:hidden xs:hidden sm:hidden flex flex-col justify-center mt-40 w-10/12 font-roboto'>
         <h1 className='text-white text-5xl font-semibold'>Trabalhos e Projetos</h1>
-        <div className='mt-10 grid grid-cols-3 justify-center '>
+        <div className='mt-10 grid grid-cols-3 justify-center cursor-pointer'>
           {
             Projects.map((project, index) => (
               <div key={index} className='w-10/12 p-7 m-5 border rounded-2xl text-purple hover:bg-purple hover:bg-opacity-10 hover:border-0'>
@@ -45,10 +45,10 @@ function Projects() {
                   <h2 className='text-white font-semibold text-xl'>{project.title}</h2>
                   <p className='text-gray text-md mt-5'>{project.paragraph}</p>
                 </div>
-                <div className='flex border w-auto h-auto mt-2 '>
+                <div className='flex w-auto h-auto mt-2'>
                   {
                     project.technologies.map((technology, index) => (
-                      <span key={index} className='text-purple p-1 rounded-xl mx-1 border text-opacity-50'>{technology}</span>
+                      <span key={index} className={`flex text-purple p-1 px-2 items-center rounded-xl my-3 mr-2  border text-opacity-50 ${technology === 'Online' ? 'text-black' : 'text-black'}`}>{technology}</span>
                     ))
                   }
                 </div>
