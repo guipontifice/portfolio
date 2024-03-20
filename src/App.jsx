@@ -13,15 +13,15 @@ import './i18n.js'
 
 function App() {
   return (
-    <div className='dark:bg-page bg-white min-h-screen'>
-      <div className='dark:bg-page bg-white flex flex-col items-center w-full'>
-          <Navbar />
-        <Home />
-        <AboutMe />
-        <Projects />
-        <Skills />
-        <Works />
-        <Contact />
+    <div className='bg-page min-h-screen'>
+      <div className='bg-page flex flex-col items-center w-full'>
+        <Navbar />
+        <Home id="portfolio" />
+        <AboutMe id="about_me" />
+        <Projects id="projects" />
+        <Skills id="skills" />
+        <Works id="works" />
+        <Contact id="contact" />
         {/* <Routes>
           <Route path='/portfolio' element={<Home />}></Route>
           <Route path='/AboutMe' element={<AboutMe />}></Route>

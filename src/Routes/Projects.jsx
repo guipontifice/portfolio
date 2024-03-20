@@ -6,7 +6,7 @@ import moviePhoto from '../../public/assets/images/moviedatabase-logo.png'
 import poemsPhoto from '../../public/assets/images/shakespeare-icon.jpg'
 import stocksPhoto from '../../public/assets/images/stocks.jpg'
 import spotifyPhoto from '../../public/assets/images/spotify-logo.png'
-function Projects() {
+function Projects({ id }) {
   const { t } = useTranslation()
   const Projects = [
     {
@@ -60,7 +60,7 @@ function Projects() {
   ]
   return (
     <>
-      <div className='xxs:hidden xs:hidden sm:hidden flex flex-col justify-center mt-40 w-10/12 font-roboto'>
+      <div id={id} className='xxs:hidden xs:hidden sm:hidden flex flex-col justify-center mt-40 w-10/12 font-roboto'>
         <h1 className='text-white text-5xl font-semibold'>Trabalhos e Projetos</h1>
         <div className='mt-10 grid grid-cols-3 justify-center cursor-pointer'>
           {

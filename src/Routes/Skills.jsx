@@ -15,10 +15,11 @@ import mysqlSvg from '../../public/assets/images/mysql-icon.svg';
 import dockerSvg from '../../public/assets/images/docker-icon.svg';
 import figmaSvg from '../../public/assets/images/figma-icon.svg';
 import sassSvg from '../../public/assets/images/sass-icon.svg';
-function Skills() {
+function Skills({ id }) {
   return (
     <>
-      <div className='xxs:hidden xs:hidden sm:hidden md:hidden'>
+    <div id={id} className='w-10/12 flex flex-col items-center'>
+      <div className='xxs:hidden xs:hidden sm:hidden md:hidden w-2/12 flex justify-center'>
         <h2 className='flex items-center justify-center mt-32 text-purple text-xl bg-purple bg-opacity-20 rounded-xl p-3 w-full font-semibold font-roboto'>
           👨‍💻 Skills
         </h2>
@@ -49,6 +50,7 @@ function Skills() {
           <img src={sassSvg} alt="" className='mx-3' />
         </div>
       </div>
+    </div>
     </>
   )
 }

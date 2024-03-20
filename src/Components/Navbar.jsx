@@ -1,9 +1,10 @@
 import React from 'react'
 import { useState } from 'react'
-import { Link, NavLink } from 'react-router-dom';
+import { Link as ScrollLink } from 'react-scroll'
 import { useTranslation } from 'react-i18next';
-import LanguageSelector2 from './LanguageSelector2';
-import DarkMode from './DarkMode';
+import avatarImg from '../../public/assets/images/avatar.png'
+import scroll from '../utils/smoothScroll';
+
 function Navbar() {
   const { t } = useTranslation()
   const [showSidebar, setShowSidebar] = useState(false);
@@ -13,24 +14,30 @@ function Navbar() {
     setShowSidebar(false);
   }
   const Links = [
-    { name: t('home'), link: '/portfolio' },
-    { name: t('about_me'), link: '/AboutMe' },
-    { name: t('projects'), link: '/Projects' },
-    { name: t('contact'), link: '/Contact' },
+    { name: 'Home', link: '/portfolio' },
+    { name: 'Sobre mim', link: '/AboutMe' },
+    { name: 'Projetos', link: '/Projects' },
+    { name: 'Skills', link: '/Skills' },
+    { name: 'Trabalhos', link: '/Works' },
+    { name: 'Contato', link: '/Contact' },
   ]
 
   return (
     <>
-      <div className='fixed xxs:hidden xs:hidden sm:hidden flex justify-center w-11/12 h-14 mt-8 bg-navbar rounded-2xl'>
-        <div className='flex items-center'>
+      <div className='fixed xxs:hidden xs:hidden sm:hidden flex justify-around w-11/12 h-14 mt-8 bg-navbar rounded-2xl font-roboto'>
+        <div className='w-12'><img src={avatarImg} alt="" /></div>
+        <div className='flex justify-end items-center'>
           {Links.map((link, index) => (
-            <Link
+            <div
+            onClick={() => scroll(link.link)}
               to={link.link}
               key={index}
-              className='text-white text-opacity-50 m-2 hover:text-purple hover:text-opacity-50'
+              className='text-gray m-2 hover:text-purple hover:text-opacity-50 cursor-pointer'
+              smooth={true}
+              duration={500}
             >
               {link.name}
-            </Link>
+            </div>
           ))}
         </div>
       </div>
