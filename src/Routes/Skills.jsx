@@ -46,6 +46,7 @@ function Skills() {
           <img src={mongodbSvg} alt="" className='mx-3' />
           <img src={mysqlSvg} alt="" className='mx-3' />
           <img src={dockerSvg} alt="" className='mx-3' />
+          <img src={sassSvg} alt="" className='mx-3' />
         </div>
       </div>
     </>

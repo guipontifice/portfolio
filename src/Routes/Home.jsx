@@ -4,13 +4,29 @@ import { Link } from 'react-router-dom';
 import avatar from '../../public/assets/images/avatar.png';
 import EmojiPicker, { EmojiStyle } from 'emoji-picker-react';
 import { Emoji } from 'emoji-picker-react';
+import  download  from 'downloadjs';
+import cv from '../../public/assets/download/CV Guilherme Pontifice - Desenvolvedor React.pdf';
 
 function Home() {
   const { t } = useTranslation()
-
+  const downloadCv = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await fetch(cv)
+      // const response = await fetch('https://guipontifice.github.io/portfolio/assets/download/CV%20Guilherme%20Pontifice%20-%20Desenvolvedor%20React.pdf');
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`)
+      }
+      const blob = await response.blob();
+      download(blob, 'CV Guilherme Pontifice.pdf')
+    } catch(error) {
+      console.log('Error', error);
+    }
+    
+  }
   return (
     <>
-      <div className='xxs:hidden xs:hidden sm:hidden md:hidden flex flex-row items-center justify-between mt-40 font-roboto w-10/12 dark:text-white text-black mb-40'>
+      <div className='xxs:hidden xs:hidden sm:hidden md:hidden flex flex-row items-center justify-between mt-40 font-roboto w-10/12 mb-40'>
         <div className='text-white h-96 mt-36'>
           <div className='flex flex-row justify-center items-center bg-purple bg-opacity-10 hover:bg-opacity-20 border-0 rounded-2xl w-36 h-16 text-purple text-2xl font-semibold mb-10'>
             <span className='mx-1'>{<Emoji unified="1f44b" size="25" />}</span>
@@ -45,18 +61,23 @@ function Home() {
           <img src={`${avatar}`} alt="" className='w-2/6 rounded-full h-2/6 mb-10' />
         </div>
         <div className='flex flex-col text-lg text-purple text-opacity-50 cursor-pointer mt-36  h-96'>
-          <div className='flex m-2 mt-32 justify-end hover:opacity-50 hover:transition-opacity'>
+          <div className='flex m-2 mt-32 justify-end hover:opacity-50 hover:transition-opacity' onClick={(event) => downloadCv(event)}>
             Baixar CV
             <div className='ml-2'>
               <ion-icon name="download-outline"></ion-icon>
             </div>
           </div>
-          <div className='flex justify-center p-3 border w-52 h-12 items-center text-md rounded-xl hover:bg-purple hover:bg-opacity-20 hover:border-0'>
+          <a 
+          href='https://wa.me/5511977645536' 
+          className='flex justify-center p-3 border w-52 h-12 items-center text-md rounded-xl hover:bg-purple hover:bg-opacity-20 hover:border-0'
+          rel='noopener noreferrer'
+          target='_blank'
+          >
             <div className='flex items-center mr-2'>
               <ion-icon name="logo-whatsapp"></ion-icon>
             </div>
             Vamos Conversar!
-          </div>
+          </a>
 
         </div>
       </div>

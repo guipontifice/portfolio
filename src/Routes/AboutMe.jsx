@@ -16,7 +16,7 @@ function AboutMe() {
         </div>
         <div className='flex flex-col 2xl:mr-52'>
 
-          <h1 className='text-white text-3xl font-semibold mt-10'>
+          <h1 className='text-white text-3xl font-bold mt-10'>
             Guilherme Pontifice Pauferro
           </h1>
           <div className='flex flex-col mt-7 m-3 text-lg'>

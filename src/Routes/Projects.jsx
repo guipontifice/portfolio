@@ -5,6 +5,7 @@ import wordlePhoto from '../../public/assets/images/wordle-logo.png'
 import moviePhoto from '../../public/assets/images/moviedatabase-logo.png'
 import poemsPhoto from '../../public/assets/images/shakespeare-icon.jpg'
 import stocksPhoto from '../../public/assets/images/stocks.jpg'
+import spotifyPhoto from '../../public/assets/images/spotify-logo.png'
 function Projects() {
   const { t } = useTranslation()
   const Projects = [
@@ -28,9 +29,33 @@ function Projects() {
       title: 'Valorama Assets',
       paragraph: t('investing_project'),
       githubLink: 'https://github.com/guipontifice/investing-values',
-      webLink: 'https://github.com/guipontifice/investing-values',
+      webLink: '',
       image: stocksPhoto,
-      technologies: ['Beta', 'React', 'JavaScript', 'NodeJS']
+      technologies: ['Beta', 'React', 'JavaScript', 'NodeJS', 'Puppeteer']
+    },
+    {
+      title: 'Spotify Query',
+      paragraph: t('investing_project'),
+      githubLink: 'https://github.com/guipontifice/songs-query',
+      webLink: '',
+      image: spotifyPhoto,
+      technologies: ['Beta', 'React', 'TypeScript', 'NodeJS']
+    },
+    {
+      title: 'Wordle',
+      paragraph: t('investing_project'),
+      githubLink: 'https://github.com/guipontifice/wordle-typescript',
+      webLink: '',
+      image: wordlePhoto,
+      technologies: ['Beta', 'React', 'TypeScript']
+    },
+    {
+      title: 'Timer',
+      paragraph: t('investing_project'),
+      githubLink: 'https://github.com/guipontifice/cronometro-react',
+      webLink: '',
+      image: timerPhoto,
+      technologies: ['Beta', 'React', 'TypeScript']
     },
   ]
   return (
@@ -65,15 +90,18 @@ function Projects() {
                   >
                     <ion-icon name="logo-github"></ion-icon>
                   </a>
-                  <a
-                    href={project.webLink}
-                    className='text-4xl mr-2 cursor-pointer hover:text-purple'
-                    aria-label='Web'
-                    rel='noopener'
-                    target='_blank'
-                  >
-                    <ion-icon name="globe-outline"></ion-icon>
-                  </a>
+                  {
+                    project.webLink !== '' &&
+                    <a
+                      href={project.webLink}
+                      className='text-4xl mr-2 cursor-pointer hover:text-purple'
+                      aria-label='Web'
+                      rel='noopener'
+                      target='_blank'
+                    >
+                      <ion-icon name="globe-outline"></ion-icon>
+                    </a>
+                  }
                 </div>
               </div>
             ))

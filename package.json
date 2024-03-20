@@ -20,6 +20,7 @@
     "@material-tailwind/react": "^2.1.4",
     "@testing-library/react": "^14.0.0",
     "dotenv": "^16.3.1",
+    "downloadjs": "^1.4.7",
     "emailjs-com": "^3.2.0",
     "emoji-picker-react": "^4.8.0",
     "flag-icon-css": "^4.1.7",
