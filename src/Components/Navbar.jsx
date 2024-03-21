@@ -24,7 +24,7 @@ function Navbar() {
 
   return (
     <>
-      <div className='fixed xxs:hidden xs:hidden sm:hidden flex justify-around w-11/12 h-14 mt-8 bg-navbar rounded-2xl font-roboto'>
+      <div className='fixed xxs:hidden xs:hidden sm:hidden md:hidden flex justify-around w-11/12 h-14 mt-8 bg-navbar rounded-2xl font-roboto'>
         <div className='w-12'><img src={avatarImg} alt="" /></div>
         <div className='flex justify-end items-center'>
           {Links.map((link, index) => (
@@ -32,7 +32,7 @@ function Navbar() {
             onClick={() => scroll(link.link)}
               to={link.link}
               key={index}
-              className='text-gray m-2 hover:text-purple hover:text-opacity-50 cursor-pointer'
+              className='text-white text-opacity-50 mx-4 m-2 hover:text-purple hover:text-opacity-50 cursor-pointer'
               smooth={true}
               duration={500}
             >
