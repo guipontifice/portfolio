@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import avatar from '../../public/assets/images/avatar.png';
-import EmojiPicker, { EmojiStyle } from 'emoji-picker-react';
+import avatarPrincipal from '../../public/assets/images/avatarPrincipal.png';
 import { Emoji } from 'emoji-picker-react';
 import download from 'downloadjs';
 import cv from '../../public/assets/download/CV Guilherme Pontifice - Desenvolvedor React.pdf';
@@ -11,7 +11,7 @@ function Home({ id }) {
   const { t } = useTranslation()
   const downloadCv = async (event) => {
     event.preventDefault();
-    try {
+    try { 
       const response = await fetch(cv)
       // const response = await fetch('https://guipontifice.github.io/portfolio/assets/download/CV%20Guilherme%20Pontifice%20-%20Desenvolvedor%20React.pdf');
       if (!response.ok) {

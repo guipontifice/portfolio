@@ -17,11 +17,11 @@ function App() {
       <div className='bg-page flex flex-col items-center w-full'>
         <Navbar />
         <Home id="portfolio" />
-        <AboutMe id="about_me" />
-        <Projects id="projects" />
-        <Skills id="skills" />
-        <Works id="works" />
-        <Contact id="contact" />
+        <AboutMe id="AboutMe" />
+        <Projects id="Projects" />
+        <Skills id="Skills" />
+        <Works id="Works" />
+        <Contact id="Contact" />
         {/* <Routes>
           <Route path='/portfolio' element={<Home />}></Route>
           <Route path='/AboutMe' element={<AboutMe />}></Route>

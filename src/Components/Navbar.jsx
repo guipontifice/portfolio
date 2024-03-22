@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import { Link as ScrollLink } from 'react-scroll'
+import { Link } from 'react-scroll'
 import { useTranslation } from 'react-i18next';
 import avatarImg from '../../public/assets/images/avatar.png'
 import scroll from '../utils/smoothScroll';
@@ -14,30 +14,32 @@ function Navbar() {
     setShowSidebar(false);
   }
   const Links = [
-    { name: 'Home', link: '/portfolio' },
-    { name: 'Sobre mim', link: '/AboutMe' },
-    { name: 'Projetos', link: '/Projects' },
-    { name: 'Skills', link: '/Skills' },
-    { name: 'Trabalhos', link: '/Works' },
-    { name: 'Contato', link: '/Contact' },
+    { name: 'Home', link: 'portfolio' },
+    { name: 'Sobre mim', link: 'AboutMe' },
+    { name: 'Projetos', link: 'Projects' },
+    { name: 'Skills', link: 'Skills' },
+    { name: 'Carreira', link: 'Works' },
+    { name: 'Contato', link: 'Contact' },
   ]
 
   return (
     <>
-      <div className='fixed xxs:hidden xs:hidden sm:hidden md:hidden flex justify-around w-11/12 h-14 mt-8 bg-navbar rounded-2xl font-roboto'>
+      <div className='fixed xxs:hidden xs:hidden sm:hidden md:hidden flex justify-around w-11/12 h-14 mt-5 bg-navbar rounded-2xl font-roboto'>
         <div className='w-12'><img src={avatarImg} alt="" /></div>
         <div className='flex justify-end items-center'>
           {Links.map((link, index) => (
-            <div
-            onClick={() => scroll(link.link)}
+            <Link
+              onClick={() => scroll(link.link)}
               to={link.link}
               key={index}
-              className='text-white text-opacity-50 mx-4 m-2 hover:text-purple hover:text-opacity-50 cursor-pointer'
+              spy={true}
+              offset={20} 
               smooth={true}
               duration={500}
+              className='text-white text-opacity-50 mx-4 m-2 hover:text-purple hover:text-opacity-50 cursor-pointer'
             >
               {link.name}
-            </div>
+            </Link>
           ))}
         </div>
       </div>
