@@ -11,7 +11,7 @@ function Projects({ id }) {
   const Projects = [
     {
       title: 'Movie Catalog',
-      paragraph: t('movie_project'),
+      paragraph: 'Catálogo de Filmes que mostra as descrições e informações de filmes',
       githubLink: 'https://github.com/guipontifice/the-movie-database',
       webLink: 'https://guipontifice.github.io/the-movie-database/',
       image: moviePhoto,
@@ -19,7 +19,7 @@ function Projects({ id }) {
     },
     {
       title: 'Poems Vee',
-      paragraph: t('poems_project'),
+      paragraph: "Site de Poemas que apresenta poemas ingleses, com a possibilidade de favoritar poemas e pesquisar autores.",
       githubLink: 'https://github.com/guipontifice/poems-vee',
       webLink: 'https://guipontifice.github.io/poems-vee/',
       image: poemsPhoto,
@@ -27,7 +27,7 @@ function Projects({ id }) {
     },
     {
       title: 'Valorama Assets',
-      paragraph: t('investing_project'),
+      paragraph: "App feito com JavaScript para uso interno de um colaborador em uma empresa de investimentos, onde a cada 10 minutos é reapresenta os dados mais importantes das ações.",
       githubLink: 'https://github.com/guipontifice/investing-values',
       webLink: '',
       image: stocksPhoto,
@@ -35,7 +35,7 @@ function Projects({ id }) {
     },
     {
       title: 'Spotify Query',
-      paragraph: t('investing_project'),
+      paragraph: 'App que pesquisa letras de músicas no spotify, mostrando também o áudio.',
       githubLink: 'https://github.com/guipontifice/songs-query',
       webLink: '',
       image: spotifyPhoto,
@@ -43,7 +43,7 @@ function Projects({ id }) {
     },
     {
       title: 'Wordle',
-      paragraph: t('investing_project'),
+      paragraph: "App que simula o famoso jogo Wordle, feito com React e TypeScript.",
       githubLink: 'https://github.com/guipontifice/wordle-typescript',
       webLink: '',
       image: wordlePhoto,
@@ -51,7 +51,7 @@ function Projects({ id }) {
     },
     {
       title: 'Timer',
-      paragraph: t('investing_project'),
+      paragraph: 'Cronômetro digital, com a possibilidade de pausar, reiniciar e parar o cronômetro a qualquer momento.',
       githubLink: 'https://github.com/guipontifice/cronometro-react',
       webLink: '',
       image: timerPhoto,

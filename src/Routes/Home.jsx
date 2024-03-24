@@ -120,17 +120,17 @@ function Home({ id }) {
           </div>
           <div className='flex flex-row justify-start w-10/12'>
             <div className='flex flex-row justify-start items-center w-full  mt-5 '>
-              <span className='flex flex-row items-center w-6/12 mr-2 text-purple text-opacity-50 hover:text-opacity-20 cursor-pointer' onClick={(event) => downloadCv(event)}>Baixar CV
+              <span className='sm:text-sm flex flex-row items-center w-8/12 mr-2 text-purple text-opacity-50 hover:text-opacity-20 cursor-pointer' onClick={(event) => downloadCv(event)}>Baixar CV
                 <div className='ml-2'>
                   <ion-icon name="download-outline"></ion-icon>
                 </div>
               </span>
-              <div className='flex flex-row justify-center items-center border border-purple rounded-lg w-full py-2 px-1 text-purple text-opacity-50 hover:text-opacity-50 hover:border-0 hover:bg-purple hover:bg-opacity-5'>
+              <div className=' flex flex-row justify-center items-center border w-8/12 border-purple rounded-lg py-2 px-1 text-purple text-opacity-50 hover:text-opacity-50 hover:border-0 hover:bg-purple hover:bg-opacity-5'>
                 <a
                   href="https://wa.me/5511977645536"
                   className='flex items-center'>
                   <ion-icon name="logo-whatsapp"></ion-icon>
-                  <span className='ml-0.5'>Vamos Conversar!</span>
+                  <span className='sm:text-sm ml-0.5'>Vamos Conversar!</span>
                 </a>
               </div>
             </div>
