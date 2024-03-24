@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { Link } from 'react-scroll'
 import { useTranslation } from 'react-i18next';
 import avatarImg from '../../public/assets/images/avatar.png'
+import scroll from '../utils/smoothScroll';
 
 function Navbar() {
   const { t } = useTranslation()
