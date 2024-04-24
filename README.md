@@ -2,8 +2,6 @@
 
 Bem-vindo ao meu portfólio! Este é o repositório que contém o código-fonte do meu site pessoal, onde compartilho informações sobre mim, meus projetos e como entrar em contato.
 
-<img src="./public/assets/images/readme.png" width="200"> <img src="./public/assets/images/readme2.png" width="200">
-
 ## Tecnologias Utilizadas
 
 - **React:** A biblioteca JavaScript para construção da interface do usuário.
